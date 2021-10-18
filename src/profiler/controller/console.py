@@ -4,81 +4,35 @@ from pathlib import Path
 from typing import Any, List, Optional
 
 def parse_args(args: Optional[List[Any]] = None) -> argparse.Namespace:
-    """Parse the command line arguments for the `pandas_profiling` binary.
+    """Parse the command line arguments for the profiling.
     Args:
       args: List of input arguments. (Default value=None).
     Returns:
       Namespace with parsed arguments.
     """
     parser = argparse.ArgumentParser(
-        description="Profile the variables in a CSV file and generate a HTML report."
-    )
-
-    # Console specific
-    parser.add_argument(
-        "-s",
-        "--silent",
-        help="Only generate but do not open report",
-        action="store_true",
-    )
-
-    parser.add_argument(
-        "-m",
-        "--minimal",
-        help="Minimal configuration for big data sets",
-        action="store_true",
-    )
-
-    parser.add_argument(
-        "-e",
-        "--explorative",
-        help="Explorative configuration featuring unicode, file and image analysis",
-        action="store_true",
-    )
-
-    # Config
-    parser.add_argument(
-        "--pool_size", type=int, default=0, help="Number of CPU cores to use"
-    )
-    parser.add_argument(
-        "--title",
-        type=str,
-        default="Pandas Profiling Report",
-        help="Title for the report",
-    )
-
-    parser.add_argument(
-        "--infer_dtypes",
-        default=False,
-        action="store_true",
-        help="To infer dtypes of the dataframe",
-    )
-
-    parser.add_argument(
-        "--no-infer_dtypes",
-        dest="infer_dtypes",
-        action="store_false",
-        help="To read dtypes as read by pandas",
+        description="Profile the tables in a db and store in a mongodb collection."
     )
 
     parser.add_argument(
         "--config_file",
         type=str,
         default=None,
-        help="Specify a yaml config file. Have a look at the 'config_default.yaml' as a starting point.",
+        help="Specify a yaml config file. Have a look at the 'default.yaml' as a starting point.",
     )
 
     parser.add_argument(
-        "input_db",
+        "--source",
         type=str,
-        help="DB connection and table to profile",
-    )
-    parser.add_argument(
-        "output_db",
-        type=str,
-        nargs="?",
-        help="Output db connection and collection information.",
         default=None,
+        help="Specify a data source. Have a look at the source.yaml as a starting point.",
+    )
+
+    parser.add_argument(
+        "--sink",
+        type=str,
+        default=None,
+        help="Specify a sink database (mongodb for now). Have a look at the sink.yaml for reference."
     )
 
     return parser.parse_args(args)
@@ -94,19 +48,17 @@ def main(args: Optional[List[Any]] = None) -> None:
     parsed_args = parse_args(args)
     kwargs = vars(parsed_args)
 
-    input_file = Path(kwargs.pop("input_file"))
-    output_file = kwargs.pop("output_file")
-    if output_file is None:
-        output_file = str(input_file.with_suffix(".html"))
+    input_db_connection_string = Path(kwargs.pop("input_db"))
+    output_db_connection_string = kwargs.pop("output_db")
 
-    silent = kwargs.pop("silent")
+    config_file_path = Path(kwargs.pop("config_file"))
+    source_file_path = Path(kwargs.pop("source"))
+    sink_file_path = Path(kwargs.pop("sink"))
 
-    # read the DataFrame
-    df = read_pandas(input_file)
+    # read the db
+
+    # create a df
 
     # Generate the profiling report
-    p = ProfileReport(
-        df,
-        **kwargs,
-    )
-    p.to_file(Path(output_file), silent=silent)
+
+    # Publish the jsons in the output db collection

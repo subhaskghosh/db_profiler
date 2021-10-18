@@ -101,6 +101,41 @@ class Univariate(BaseModel):
     file: FileVars = FileVars()
     url: UrlVars = UrlVars()
 
+class Duplicates(BaseModel):
+    head: int = 10
+    key: str = "# duplicates"
+
+
+class Correlation(BaseModel):
+    key: str = ""
+    calculate: bool = Field(default=True)
+    warn_high_correlations: int = Field(default=10)
+    threshold: float = Field(default=0.5)
+
+
+class Correlations(BaseModel):
+    pearson: Correlation = Correlation(key="pearson")
+    spearman: Correlation = Correlation(key="spearman")
+
+
+class Interactions(BaseModel):
+    # Set to False to disable scatter plots
+    continuous: bool = True
+
+    targets: List[str] = []
+
+
+class Samples(BaseModel):
+    head: int = 10
+    tail: int = 10
+    random: int = 0
+
+
+class Variables(BaseModel):
+    descriptions: dict = {}
+
+class Report(BaseModel):
+    precision: int = 10
 
 class MissingPlot(BaseModel):
     # Force labels when there are > 50 variables
@@ -142,98 +177,6 @@ class Plot(BaseModel):
     scatter_threshold: int = 1000
     pie: Pie = Pie()
 
-
-class Theme(Enum):
-    united = "united"
-    flatly = "flatly"
-
-
-class Style(BaseModel):
-    primary_color: str = "#337ab7"
-    logo: str = ""
-    theme: Optional[Theme] = None
-
-
-class Html(BaseModel):
-    # Styling options for the HTML report
-    style: Style = Style()
-
-    # Show navbar
-    navbar_show: bool = True
-
-    # Minify the html
-    minify_html: bool = True
-
-    # Offline support
-    use_local_assets: bool = True
-
-    # If True, single file, else directory with assets
-    inline: bool = True
-
-    # Assets prefix if inline = True
-    assets_prefix: Optional[str] = None
-
-    # Internal usage
-    assets_path: Optional[str] = None
-
-    full_width: bool = False
-
-
-class Duplicates(BaseModel):
-    head: int = 10
-    key: str = "# duplicates"
-
-
-class Correlation(BaseModel):
-    key: str = ""
-    calculate: bool = Field(default=True)
-    warn_high_correlations: int = Field(default=10)
-    threshold: float = Field(default=0.5)
-
-
-class Correlations(BaseModel):
-    pearson: Correlation = Correlation(key="pearson")
-    spearman: Correlation = Correlation(key="spearman")
-
-
-class Interactions(BaseModel):
-    # Set to False to disable scatter plots
-    continuous: bool = True
-
-    targets: List[str] = []
-
-
-class Samples(BaseModel):
-    head: int = 10
-    tail: int = 10
-    random: int = 0
-
-
-class Variables(BaseModel):
-    descriptions: dict = {}
-
-
-class IframeAttribute(Enum):
-    src = "src"
-    srcdoc = "srcdoc"
-
-
-class Iframe(BaseModel):
-    height: str = "800px"
-    width: str = "100%"
-    attribute: IframeAttribute = IframeAttribute.srcdoc
-
-
-class Notebook(BaseModel):
-    """When in a Jupyter notebook"""
-
-    iframe: Iframe = Iframe()
-
-
-class Report(BaseModel):
-    precision: int = 10
-
-
 class Settings(BaseSettings):
     # Default prefix to avoid collisions with environment variables
     class Config:
@@ -261,13 +204,6 @@ class Settings(BaseSettings):
     # Sort the variables. Possible values: ascending, descending or None (leaves original sorting)
     sort: Optional[str] = None
 
-    missing_diagrams: Dict[str, bool] = {
-        "bar": True,
-        "matrix": True,
-        "dendrogram": True,
-        "heatmap": True,
-    }
-
     correlations: Dict[str, Correlation] = {
         "spearman": Correlation(key="spearman"),
         "pearson": Correlation(key="pearson"),
@@ -294,8 +230,6 @@ class Settings(BaseSettings):
 
     # Report rendering
     report: Report = Report()
-    html: Html = Html()
-    notebook = Notebook()
 
     def update(self, updates: dict) -> "Settings":
         update = _merge_dictionaries(self.dict(), updates)
@@ -308,22 +242,6 @@ class Config:
             "samples": None,
             "duplicates": None,
             "vars": {"cat": {"redact": True}},
-        },
-        "dark_mode": {
-            "html": {
-                "style": {
-                    "theme": Theme.flatly,
-                    "primary_color": "#2c3e50",
-                }
-            }
-        },
-        "orange_mode": {
-            "html": {
-                "style": {
-                    "theme": Theme.united,
-                    "primary_color": "#d34615",
-                }
-            }
         },
         "explorative": {
             "vars": {
