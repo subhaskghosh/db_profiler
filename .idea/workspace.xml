@@ -2,89 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9278a2ef-27b7-4c43-be7a-b0f9629c41d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/missings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/samples.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/scatter_matrices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/schemas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/series_descriptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/table_stats.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/models/tables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/blob-haikei.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/footer.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/header.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron-profile.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/includes/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/layout.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_alertsCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_categoricalVariablesCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_interactionsCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_missingCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_numericVariablesCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_overviewCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_samplesCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_unsupportedVariablesCard.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/layered-waves-haikei.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/db_profiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/db_profiler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/console.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/default.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/minimal.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/alerts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/correlations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/dataframe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/describe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/duplicates.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/expectation_algorithms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/missing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pairwise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/correlations_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/dataframe_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_boolean_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_categorical_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_counts_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_date_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_file_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_generic_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_image_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_numeric_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_path_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_supported_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/describe_url_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/duplicates_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/sample_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/summary_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/table_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/pandas/utils_pandas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/sample.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/summarizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/summary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/summary_algorithms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/typeset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/model/typeset_relations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/profile_report.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/cache.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/common.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/df_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/paths.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/utils/progress_bar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgprofiler/profiler/version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler/sink.yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler/source.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/alerts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +21,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
@@ -111,6 +29,18 @@
               <folding>
                 <element signature="e#80#91#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="180">
+                <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -173,7 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pandas_profiling/config_minimal.yaml" />
         <option value="$PROJECT_DIR$/src/pandas_profiling/controller/console.py" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/footer.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/header.pug" />
@@ -224,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_categoricalVariablesCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/series_descriptions.js" />
         <option value="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -257,64 +187,20 @@
               <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pandas_profiling" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pandas_profiling" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pandas_profiling" type="462c0819:PsiDirectoryNode" />
-              <item name="visualisation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="mixins" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -483,7 +369,7 @@
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Project Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -491,7 +377,7 @@
       <window_info id="Job Explorer" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2140351" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2140351" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38128656" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,20 +477,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/examples/banking_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/t20/lib/python3.7/concurrent/futures/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="383" selection-start-line="383" selection-end-line="383" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/examples/titanic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -918,6 +790,19 @@
           <folding>
             <element signature="e#80#91#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/Screen.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
