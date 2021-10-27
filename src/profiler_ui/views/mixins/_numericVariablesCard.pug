@@ -1,0 +1,123 @@
+mixin numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+    .col-md-3
+        .bs-component
+                h4.tile-title #{variable.column}
+                small.text-muted Real number (ℝ<sub>≥0</sub>)
+    .col-md-3
+        .bs-component
+            table.table.table-striped
+                tbody
+                    tr
+                        td Distinct
+                        td #{variable.n_distinct}
+                    tr
+                        td Distinct (%)
+                        td #{roundDecimal(variable.p_distinct*100)}%
+                    tr
+                        td Missing
+                        td #{variable.n_missing}
+                    tr
+                        td Missing (%)
+                        td #{roundDecimal(variable.p_missing*100)}%
+                    tr
+                        td Infinite
+                        td #{variable.n_infinite}
+                    tr
+                        td Infinite (%)
+                        td #{roundDecimal(variable.p_infinite*100)}%
+                    tr
+                        td Mean
+                        td #{roundDecimal(variable.mean)}
+    .col-md-3
+        .bs-component
+            table.table.table-striped
+                tbody
+                    tr
+                        td Minimum
+                        td #{variable.min}
+                    tr
+                        td Maximum
+                        td #{variable.max}
+                    tr
+                        td Zeros
+                        td #{variable.n_zeros}
+                    tr
+                        td Zeros (%)
+                        td #{roundDecimal(variable.p_zeros*100)}%
+                    tr
+                        td Negative
+                        td #{variable.n_negative}
+                    tr
+                        td Negative (%)
+                        td #{roundDecimal(variable.p_negative*100)}%
+                    tr
+                        td Memory size
+                        td #{formatBytes(variable.memory_size)}
+    .col-md-3
+        .bs-component
+            - var bimg = convertSVG(variable.histogram_graph)
+            img.img-fluid(src=bimg)
+    .col-md-6
+        .bs-component
+            h4.tile-title Quantile statistics
+            table.table.table-striped
+                tbody
+                    tr
+                        td Minimum
+                        td #{variable.min}
+                    tr
+                        td 5-th percentile
+                        td #{roundDecimal(variable['5%'])}
+                    tr
+                        td Q1
+                        td #{roundDecimal(variable['25%'])}
+                    tr
+                        td median
+                        td #{roundDecimal(variable['50%'])}
+                    tr
+                        td Q3
+                        td #{roundDecimal(variable['75%'])}
+                    tr
+                        td 95-th percentile
+                        td #{roundDecimal(variable['95%'])}
+                    tr
+                        td Maximum
+                        td #{variable.max}
+                    tr
+                        td Range
+                        td #{roundDecimal(variable.range)}
+                    tr
+                        td Interquartile range (IQR)
+                        td #{roundDecimal(variable.iqr)}
+    .col-md-6
+        .bs-component
+            h4.tile-title Descriptive statistics
+            table.table.table-striped
+                tbody
+                    tr
+                        td Standard deviation
+                        td #{variable.std}
+                    tr
+                        td Coefficient of variation (CV)
+                        td #{variable.cv}
+                    tr
+                        td Kurtosis
+                        td #{variable.kurtosis}
+                    tr
+                        td Mean
+                        td #{variable.mean}
+                    tr
+                        td Median Absolute Deviation (MAD)
+                        td #{variable.mad}
+                    tr
+                        td Skewness
+                        td #{variable.skewness}
+                    tr
+                        td Sum
+                        td #{roundDecimal(variable.sum)}
+                    tr
+                        td Variance
+                        td #{variable.variance}
+                    tr
+                        td Monotonicity
+                        td #{variable.monotonic}

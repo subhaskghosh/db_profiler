@@ -1,0 +1,17 @@
+mixin thumbCard(table)
+  .col-md-4
+    .card.mb-4.shadow-sm
+      svg.bd-placeholder-img.card-img-top&attributes({"width": "100%"}, {"height": "225"}, {"focusable": "false"}, {"role": "img"})
+        rect(width="100%" height="100%" fill="#55595c")
+        include layered-waves-haikei.svg
+        title #{table.schema}.#{table.table}
+        text(x="50%" y="50%" fill="#eceeef" dy=".3em") #{table.schema}.#{table.table}
+      .card-body
+        .card-text View the profile or refresh
+        small.text-muted Last Refresh: #{table.create_date}
+        .d-flex.justify-content-between.align-items-center
+          .btn-group
+            a(href="profile/" + table.schema + "/" + table.table)
+                button.btn.btn-sm.btn-outline-secondary View
+            a(href="refresh")
+                button.btn.btn-sm.btn-outline-secondary Refresh

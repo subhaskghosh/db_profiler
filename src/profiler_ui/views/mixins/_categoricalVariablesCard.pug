@@ -1,0 +1,100 @@
+mixin categoricalVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+    .col-md-3
+        .bs-component
+                h4.tile-title #{variable.column}
+                small.text-muted Categorical
+    .col-md-3
+        .bs-component
+            table.table.table-striped
+                tbody
+                    tr
+                        td Distinct
+                        td #{variable.n_distinct}
+                    tr
+                        td Distinct (%)
+                        td #{roundDecimal(variable.p_distinct*100)}%
+                    tr
+                        td Missing
+                        td #{variable.n_missing}
+                    tr
+                        td Missing (%)
+                        td #{roundDecimal(variable.p_missing*100)}%
+                    tr
+                        td Memory size
+                        td #{formatBytes(variable.memory_size)}
+    .col-md-3
+        .bs-component
+            - var bimg = convertSVG(variable.histogram_graph)
+            img.img-fluid(src=bimg)
+    .col-md-3
+        .bs-component
+            - var bimg = convertSVG(variable.word_counts_graph)
+            img.img-fluid(src=bimg)
+    .col-md-3
+        .bs-component
+            h4.tile-title Length
+            table.table.table-striped
+                tbody
+                    tr
+                        td Max length
+                        td #{variable.max_length}
+                    tr
+                        td Median length
+                        td #{roundDecimal(variable.median_length)}
+                    tr
+                        td Mean length
+                        td #{roundDecimal(variable.mean_length)}
+                    tr
+                        td Min length
+                        td #{variable.min_length}
+    .col-md-3
+        .bs-component
+            h4.tile-title Unicode
+            table.table.table-striped
+                tbody
+                    tr
+                        td Total characters
+                        td #{variable.n_characters}
+                    tr
+                        td Distinct characters
+                        td #{variable.n_characters_distinct}
+                    tr
+                        td Distinct categories
+                        td #{variable.n_category}
+                    tr
+                        td Distinct scripts
+                        td #{variable.n_scripts}
+                    tr
+                        td Distinct blocks
+                        td #{variable.n_block_alias}
+    .col-md-3
+        .bs-component
+            h4.tile-title Unique
+            table.table.table-striped
+                tbody
+                    tr
+                        td Unique
+                        td #{variable.n_unique}
+                    tr
+                        td Unique (%)
+                        td #{roundDecimal(variable.p_unique*100)}%
+    .col-md-3
+        .bs-component
+            h4.tile-title Sample
+            table.table.table-striped
+                tbody
+                    tr
+                        td 1st Row
+                        td #{variable.first_rows['0']}
+                    tr
+                        td 2nd Row
+                        td #{variable.first_rows['1']}
+                    tr
+                        td 3rd Row
+                        td #{variable.first_rows['2']}
+                    tr
+                        td 4th Row
+                        td #{variable.first_rows['3']}
+                    tr
+                        td 5th Row
+                        td #{variable.first_rows['4']}

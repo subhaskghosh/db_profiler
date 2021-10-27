@@ -1,0 +1,86 @@
+extends profile_layout
+
+include mixins/_alertsCard
+include mixins/_overviewCard
+include mixins/_samplesCard
+include mixins/_numericVariablesCard
+include mixins/_categoricalVariablesCard
+include mixins/_booleanVariablesCard
+include mixins/_unsupportedVariablesCard
+include mixins/_missingCard
+include mixins/_interactionsCard
+
+block content
+    .album.py-5.bg-light
+        .container
+            .app-title
+                    div
+                        h2.mb-3 Profile for: #{schema}.#{table}
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Overview
+                .row
+                    +overviewCard(tableStats, formatBytes, roundDecimal)
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Variables
+
+                each variable in series_descriptions.Numeric
+                    .tile.mb-4
+                        .row
+                            +numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+
+                each variable in series_descriptions.Categorical
+                    .tile.mb-4
+                        .row
+                            +categoricalVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+
+                each variable in series_descriptions.Boolean
+                    .tile.mb-4
+                        .row
+                            +booleanVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+
+                each variable in series_descriptions.Unsupported
+                    .tile.mb-4
+                        .row
+                            +unsupportedVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Interactions
+                    .row
+                        +interactionsCard(scatter_matrices, convertSVG)
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Correlations
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Missing values
+                    .row
+                        +missingCard(missings, convertSVG)
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Sample
+                    .row
+                        +samplesCard(profileSamples)
+
+            .tile.mb-4
+                .row
+                    .col-lg-12
+                        .page-header
+                            h2.mb-3.line-head Warnings(#{profileAlerts.alerts.length})
+                .row
+                    each a in profileAlerts.alerts
+                        +alertCard(a.replace('[', '').replace(']', ''))

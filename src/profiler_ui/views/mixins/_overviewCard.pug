@@ -1,0 +1,39 @@
+mixin overviewCard(tableStats)
+    .col-md-6
+        .tile
+            h3.tile-title Dataset statistics
+            table.table.table-striped
+                tbody
+                    tr
+                        td Number of variables
+                        td #{tableStats.n_var}
+                    tr
+                        td Number of observations
+                        td #{tableStats.n}
+                    tr
+                        td Missing cells
+                        td #{tableStats.n_cells_missing}
+                    tr
+                        td Missing cells (%)
+                        td #{roundDecimal(tableStats.p_cells_missing*100)}%
+                    tr
+                        td Duplicate rows
+                        td #{tableStats.n_duplicates}
+                    tr
+                        td Duplicate rows (%)
+                        td #{roundDecimal(tableStats.p_duplicates*100)}%
+                    tr
+                        td Total size in memory
+                        td #{formatBytes(tableStats.memory_size)}
+                    tr
+                        td Average record size in memory
+                        td #{formatBytes(tableStats.record_size)}
+    .col-md-6
+        .tile
+            h3.tile-title Variable types
+            table.table.table-striped
+                tbody
+                    each val, key in tableStats.types[0]
+                        tr
+                            td #{key}
+                            td #{val}

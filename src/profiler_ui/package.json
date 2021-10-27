@@ -1,0 +1,27 @@
+{
+  "name": "profiler_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon ./start.js"
+  },
+  "keywords": [
+    "Postgres",
+    "Profiling",
+    "Machine-Learning"
+  ],
+  "author": "Subhas K Ghosh",
+  "license": "Copyright, 2021",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fast-xml-parser": "^3.21.0",
+    "mongoose": "^6.0.11",
+    "pug": "^3.0.2",
+    "svg64": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}

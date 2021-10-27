@@ -1,0 +1,29 @@
+mixin samplesCard(profileSamples)
+    .col-lg-12
+        .tile
+            h3.tile-title #{profileSamples.sample[0].name}
+            .scrollable
+                table.table.table-striped
+                    thead
+                        tr
+                            each val, key in profileSamples.sample[0].data[0]
+                                th #{key}
+                    tbody
+                        each d in profileSamples.sample[0].data
+                            tr
+                                each val, key in d
+                                    td #{val}
+    .col-lg-12
+        .tile
+            h3.tile-title #{profileSamples.sample[1].name}
+            .scrollable
+                table.table.table-striped
+                    thead
+                        tr
+                            each val, key in profileSamples.sample[1].data[0]
+                                th #{key}
+                    tbody
+                        each d in profileSamples.sample[1].data
+                            tr
+                                each val, key in d
+                                    td #{val}

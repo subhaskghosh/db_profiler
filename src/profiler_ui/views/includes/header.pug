@@ -1,0 +1,15 @@
+header
+  .collapse.bg-dark#navbarHeader
+    .container
+      .row
+        .col-sm-8.col-md-7.py-4
+          h4.text-white Description
+          p.text-muted  This application allows you to profile a postgres table and view quantile statistics, descriptive statistics, histograms, correlations, missing values, duplicates etc. for each column.
+        .col-sm-4.offset-md-1.py-4
+  nav.navbar.navbar-dark.bg-dark.shadow-sm
+    .container.d-flex.justify-content-between
+      a.navbar-brand.d-flex.align-items-center
+        include blob-haikei.svg
+        h2.text-white Postgres Profiler
+      button.navbar-toggler.collapsed&attributes({'data-toggle': 'collapse'}, {'data-target': '#navbarHeader'})
+        span.navbar-toggler-icon

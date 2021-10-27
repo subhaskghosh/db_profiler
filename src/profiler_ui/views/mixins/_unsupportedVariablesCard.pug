@@ -1,0 +1,35 @@
+mixin unsupportedVariablesCard(variable, formatBytes, roundDecimal)
+    .col-md-3
+        .bs-component
+                h4.tile-title #{variable.column}
+                small.text-muted Unsupported
+    .col-md-3
+        .bs-component
+            table.table.table-striped
+                tbody
+                    tr
+                        td Distinct
+                        td #{variable.n_distinct}
+                    tr
+                        td Distinct (%)
+                        td #{roundDecimal(variable.p_distinct*100)}%
+                    tr
+                        td Missing
+                        td #{variable.n_missing}
+                    tr
+                        td Missing (%)
+                        td #{roundDecimal(variable.p_missing*100)}%
+                    tr
+                        td Memory size
+                        td #{formatBytes(variable.memory_size)}
+    .col-md-6
+        .bs-component
+    .col-md-12
+        .bs-component
+            h4.tile-title Common Values
+            table.table.table-striped
+                tbody
+                    each val, key in variable.value_counts_index_sorted
+                        tr
+                            td #{key}
+                            td #{val}

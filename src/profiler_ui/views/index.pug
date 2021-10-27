@@ -1,0 +1,11 @@
+extends layout
+
+include mixins/_thumbCard
+
+block content
+    if dbtables.length
+        .album.py-5.bg-light
+            .container
+              .row
+                each table in dbtables
+                  +thumbCard(table)
