@@ -2,7 +2,10 @@ mixin categoricalVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
     .col-md-3
         .bs-component
                 h4.tile-title #{variable.column}
-                small.text-muted Categorical
+                span.badge.badge-info Categorical
+                each alert in variable.alerts
+                    div
+                        span.badge.badge-warning #{alert}
     .col-md-3
         .bs-component
             table.table.table-striped

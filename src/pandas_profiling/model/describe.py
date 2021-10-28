@@ -29,6 +29,9 @@ from pandas_profiling.model.table import get_table_stats
 from pandas_profiling.utils.progress_bar import progress
 from pandas_profiling.version import __version__
 
+import seaborn as sns
+sns.set(style="whitegrid")
+
 def encode_it(o: Any, t: str='value') -> Any:
     if isinstance(o, dict):
         return {encode_it(k, 'key'): encode_it(v) for k, v in o.items()}
@@ -87,6 +90,15 @@ def describe(
 
     check_dataframe(df)
     df = preprocess(config, df)
+
+    cmap = sns.diverging_palette(220, 10, as_cmap=True)
+    f, ax = plt.subplots(figsize=(20, 13))
+    sns.heatmap(df.corr(), cmap=cmap, annot=True, fmt='.1g')
+    f.tight_layout()
+    image_str = StringIO()
+    plt.savefig(image_str, format='svg')
+    plt.close()
+    correlation_result_string = image_str.getvalue()
 
     schemas_collection: Collection = target['schemas']
     tables_collection: Collection = target['tables']
@@ -238,6 +250,7 @@ def describe(
         correlations["analysis"] = analysis
         missing["analysis"] = analysis
         table_stats["analysis"] = analysis
+        table_stats["correlation_plot"] = correlation_result_string
 
         sample = {}
         sample["analysis"] = analysis

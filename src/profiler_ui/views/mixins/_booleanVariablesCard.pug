@@ -2,7 +2,10 @@ mixin booleanVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
     .col-md-3
         .bs-component
                 h4.tile-title #{variable.column}
-                small.text-muted Boolean
+                span.badge.badge-info Boolean
+                each alert in variable.alerts
+                    div
+                        span.badge.badge-warning #{alert}
     .col-md-3
         .bs-component
             table.table.table-striped

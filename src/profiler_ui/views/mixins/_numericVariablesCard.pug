@@ -2,7 +2,10 @@ mixin numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
     .col-md-3
         .bs-component
                 h4.tile-title #{variable.column}
-                small.text-muted Real number (ℝ<sub>≥0</sub>)
+                span.badge.badge-info Real number (ℝ)
+                each alert in variable.alerts
+                    div
+                        span.badge.badge-warning #{alert}
     .col-md-3
         .bs-component
             table.table.table-striped
@@ -55,8 +58,16 @@ mixin numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
                         td #{formatBytes(variable.memory_size)}
     .col-md-3
         .bs-component
+            h4.tile-title Histogram
             - var bimg = convertSVG(variable.histogram_graph)
             img.img-fluid(src=bimg)
+            h4.tile-title Frequent Values
+            table.table.table-striped
+                tbody
+                    each sample in variable.samples
+                        tr
+                            td #{sample[0]}
+                            td #{sample[1]}
     .col-md-6
         .bs-component
             h4.tile-title Quantile statistics
@@ -72,7 +83,7 @@ mixin numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
                         td Q1
                         td #{roundDecimal(variable['25%'])}
                     tr
-                        td median
+                        td Median
                         td #{roundDecimal(variable['50%'])}
                     tr
                         td Q3

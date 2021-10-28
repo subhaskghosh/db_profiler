@@ -2,7 +2,10 @@ mixin unsupportedVariablesCard(variable, formatBytes, roundDecimal)
     .col-md-3
         .bs-component
                 h4.tile-title #{variable.column}
-                small.text-muted Unsupported
+                span.badge.badge-info Unsupported
+                each alert in variable.alerts
+                    div
+                        span.badge.badge-warning #{alert}
     .col-md-3
         .bs-component
             table.table.table-striped

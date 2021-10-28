@@ -54,8 +54,85 @@ router.get('/profile/:schema/:table', (req, res) => {
         scatter_matrices.findOne({'analysis.schema':schema, 'analysis.table':table})
     ])
     .then((result) => {
-        const [tableStats, profileAlerts, profileSamples, series_descriptions, missings, correlations, scatter_matrices] = result;
-        //console.log(scatter_matrices)
+        const [tableStats, stringAlerts, profileSamples, series_descriptions, missings, correlations, scatter_matrices] = result;
+
+        // Parse the alerts and add them to the series_descriptions
+        var profileAlerts = {};
+        profileAlerts['alerts'] = [];
+        inx = 0;
+        for (const alert of stringAlerts.alerts){
+            var alrt = {};
+            split_alert = alert.split("|");
+            type_alert = split_alert[0].replace('_', ' ');
+            col_alert = split_alert[1];
+            num_alert = split_alert[2];
+
+            columns = split_alert.slice(3,split_alert.length)
+
+            alrt['type'] = type_alert;
+            alrt['column'] = col_alert;
+            alrt['num'] = num_alert;
+            alrt['columns'] = columns;
+            profileAlerts['alerts'][inx] = alrt;
+            inx = inx + 1;
+        }
+
+        for (const column_description of series_descriptions.Numeric) {
+            column_description['alerts'] = [];
+            index = 0;
+            for (const alert of profileAlerts.alerts){
+                if (alert.column == column_description.column) {
+                    column_description['alerts'][index] = alert.type;
+                    index = index + 1;
+                }
+            }
+        }
+
+        for (const column_description of series_descriptions.Categorical) {
+            column_description['alerts'] = [];
+            index = 0;
+            for (const alert of profileAlerts.alerts){
+                if (alert.column == column_description.column) {
+                    column_description['alerts'][index] = alert.type;
+                    index = index + 1;
+                }
+            }
+        }
+
+        for (const column_description of series_descriptions.Boolean) {
+            column_description['alerts'] = [];
+            index = 0;
+            for (const alert of profileAlerts.alerts){
+                if (alert.column == column_description.column) {
+                    column_description['alerts'][index] = alert.type;
+                    index = index + 1;
+                }
+            }
+        }
+
+        for (const column_description of series_descriptions.Unsupported) {
+            column_description['alerts'] = [];
+            index = 0;
+            for (const alert of profileAlerts.alerts){
+                if (alert.column == column_description.column) {
+                    column_description['alerts'][index] = alert.type;
+                    index = index + 1;
+                }
+            }
+        }
+
+        for (const column_description of series_descriptions.Numeric) {
+            values_count = column_description.value_counts_without_nan
+            var items = Object.keys(values_count).map(function(key) {
+              return [key, values_count[key]];
+            });
+            items.sort(function(first, second) {
+              return second[1] - first[1];
+            });
+            column_description['samples'] = items.slice(0, 3);
+        }
+
+        //console.log(series_descriptions.Numeric[1].sample)
         res.render('profile', {schema,
                                 table,
                                 tableStats,

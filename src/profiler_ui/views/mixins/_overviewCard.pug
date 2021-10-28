@@ -1,4 +1,4 @@
-mixin overviewCard(tableStats)
+mixin overviewCard(tableStats, formatBytes, roundDecimal, convertSVG)
     .col-md-6
         .tile
             h3.tile-title Dataset statistics
@@ -37,3 +37,5 @@ mixin overviewCard(tableStats)
                         tr
                             td #{key}
                             td #{val}
+            - var bimg = convertSVG(tableStats.correlation_plot)
+            img.img-fluid(src=bimg)

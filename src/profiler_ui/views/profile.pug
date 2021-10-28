@@ -22,7 +22,7 @@ block content
                         .page-header
                             h2.mb-3.line-head Overview
                 .row
-                    +overviewCard(tableStats, formatBytes, roundDecimal)
+                    +overviewCard(tableStats, formatBytes, roundDecimal, convertSVG)
             .tile.mb-4
                 .row
                     .col-lg-12
@@ -61,6 +61,10 @@ block content
                     .col-lg-12
                         .page-header
                             h2.mb-3.line-head Correlations
+                    .row
+                        .col-lg-12
+                            - var bimg = convertSVG(tableStats.correlation_plot)
+                            img.img-fluid(src=bimg)
             .tile.mb-4
                 .row
                     .col-lg-12
@@ -83,4 +87,4 @@ block content
                             h2.mb-3.line-head Warnings(#{profileAlerts.alerts.length})
                 .row
                     each a in profileAlerts.alerts
-                        +alertCard(a.replace('[', '').replace(']', ''))
+                        +alertCard(a)

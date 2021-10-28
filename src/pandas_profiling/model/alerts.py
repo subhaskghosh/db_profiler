@@ -100,7 +100,13 @@ class Alert:
     def __repr__(self):
         alert_type = self.alert_type.name
         column = self.column_name
-        return f"{alert_type} alert on column {column}"
+        name = self.alert_type.name.replace("_", " ")
+        if name == "HIGH CORRELATION":
+            num = len(self.values["fields"])
+            title = "|".join(self.values["fields"])
+            return f"{alert_type}|{column}|{num}|{title}"
+        else:
+            return f"{alert_type}|{column}"
 
 
 def check_table_alerts(table: dict) -> List[Alert]:
