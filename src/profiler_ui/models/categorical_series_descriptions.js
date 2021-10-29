@@ -22,8 +22,6 @@ const categorical_type = new mongoose.Schema({
   "hashable": {
     "type": "String"
   },
-  "value_counts_without_nan": {},
-  "value_counts_index_sorted": {},
   "ordering": {
     "type": "String"
   },
@@ -105,25 +103,15 @@ const categorical_type = new mongoose.Schema({
   "n_characters": {
     "type": "Number"
   },
-  "character_counts": {type : Array , "default" : []},
-  "category_alias_values": {type : Array , "default" : []},
-  "block_alias_values": {type : Array , "default" : []},
-  "block_alias_counts": {type : Array , "default" : []},
   "n_block_alias": {
     "type": "Number"
   },
-  "block_alias_char_counts": {type : Array , "default" : []},
-  "script_counts": {type : Array , "default" : []},
   "n_scripts": {
     "type": "Number"
   },
-  "script_char_counts": {type : Array , "default" : []},
-  "category_alias_counts": {type : Array , "default" : []},
   "n_category": {
     "type": "Number"
   },
-  "category_alias_char_counts": {type : Array , "default" : []},
-  "word_counts": {type : Array , "default" : []},
   "word_counts_graph": {
     "type": "String"
   },

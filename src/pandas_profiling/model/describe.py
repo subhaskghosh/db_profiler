@@ -348,6 +348,8 @@ def describe(
             missing_collection.insert_one(entry_insert)
 
         for k, v in series_description.items():
+            del v['value_counts_without_nan']
+            del v['value_counts_index_sorted']
             if v['type'] == 'Numeric':
                 res = {}
                 res["analysis"] = analysis
@@ -357,6 +359,17 @@ def describe(
                 entry_insert = res.copy()
                 numeric_series_description_collection.insert_one(entry_insert)
             elif v['type'] == 'Categorical':
+                del v['character_counts']
+                del v['category_alias_values']
+                del v['block_alias_values']
+                del v['block_alias_counts']
+                del v['block_alias_char_counts']
+                del v['script_counts']
+                del v['script_char_counts']
+                del v['category_alias_counts']
+                del v['category_alias_char_counts']
+                del v['word_counts']
+
                 res = {}
                 res["analysis"] = analysis
                 res['variable'] = k

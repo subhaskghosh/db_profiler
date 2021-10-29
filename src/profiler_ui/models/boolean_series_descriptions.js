@@ -22,8 +22,6 @@ const booleaan_type = new mongoose.Schema({
   "hashable": {
     "type": "String"
   },
-  "value_counts_without_nan": {},
-  "value_counts_index_sorted": {},
   "ordering": {
     "type": "String"
   },
