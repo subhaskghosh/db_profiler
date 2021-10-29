@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import Any, Dict, Optional
 import matplotlib.pyplot as plt
 from io import StringIO
+import zlib
 import pandas as pd
 import numpy as np
 import base64
@@ -99,6 +100,8 @@ def describe(
     plt.savefig(image_str, format='svg')
     plt.close()
     correlation_result_string = image_str.getvalue()
+    result_string = zlib.compress(correlation_result_string.encode())
+
 
     schemas_collection: Collection = target['schemas']
     tables_collection: Collection = target['tables']
@@ -107,7 +110,12 @@ def describe(
     samples_collection: Collection = target['samples']
     missing_collection: Collection = target['missings']
     scatter_matrix_collection = target['scatter_matrices']
-    series_description_collection = target['series_descriptions']
+
+    numeric_series_description_collection = target['numeric_series_descriptions']
+    categorical_series_description_collection = target['categorical_series_descriptions']
+    boolean_series_description_collection = target['boolean_series_descriptions']
+    unsupported_series_description_collection = target['unsupported_series_descriptions']
+
     table_stats_collection = target['table_stats']
     duplicates_collection = target['duplicates']
     variables_collection = target['variables']
@@ -119,7 +127,10 @@ def describe(
     samples_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
     missing_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
     scatter_matrix_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
-    series_description_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
+    numeric_series_description_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
+    categorical_series_description_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
+    boolean_series_description_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
+    unsupported_series_description_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
     table_stats_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
     duplicates_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
     variables_collection.delete_many({'analysis.schema': target_schema, 'analysis.table': target_table})
@@ -248,7 +259,7 @@ def describe(
         alrt['alerts'] = alerts
 
         table_stats["analysis"] = analysis
-        table_stats["correlation_plot"] = correlation_result_string
+        table_stats["correlation_plot"] = result_string
 
         sample = {}
         sample["analysis"] = analysis
@@ -293,7 +304,7 @@ def describe(
                 plt.savefig(image_str, format='svg')
                 plt.close()
                 result_string = image_str.getvalue()
-                series_description[k]['histogram_graph'] = result_string
+                series_description[k]['histogram_graph'] = zlib.compress(result_string.encode())
 
         for k, v in series_description.items():
             if "word_counts" in v:
@@ -306,7 +317,7 @@ def describe(
                 plt.savefig(image_str, format='svg')
                 plt.close()
                 result_string = image_str.getvalue()
-                series_description[k]['word_counts_graph'] = result_string
+                series_description[k]['word_counts_graph'] = zlib.compress(result_string.encode())
 
         pbar.update()
 
@@ -337,19 +348,45 @@ def describe(
             missing_collection.insert_one(entry_insert)
 
         for k, v in series_description.items():
-            res = {}
-            res["analysis"] = analysis
-            res['variable'] = k
-            res['result'] = v
-            entry_insert = res.copy()
-            series_description_collection.insert_one(entry_insert)
+            if v['type'] == 'Numeric':
+                res = {}
+                res["analysis"] = analysis
+                res['variable'] = k
+                res['result'] = v
+                res['type'] = ''
+                entry_insert = res.copy()
+                numeric_series_description_collection.insert_one(entry_insert)
+            elif v['type'] == 'Categorical':
+                res = {}
+                res["analysis"] = analysis
+                res['variable'] = k
+                res['result'] = v
+                res['type'] = 'Categorical'
+                entry_insert = res.copy()
+                categorical_series_description_collection.insert_one(entry_insert)
+            elif v['type'] == 'Boolean':
+                res = {}
+                res["analysis"] = analysis
+                res['variable'] = k
+                res['result'] = v
+                res['type'] = 'Boolean'
+                entry_insert = res.copy()
+                boolean_series_description_collection.insert_one(entry_insert)
+            else:
+                res = {}
+                res["analysis"] = analysis
+                res['variable'] = k
+                res['result'] = v
+                res['type'] = 'Unsupported'
+                entry_insert = res.copy()
+                unsupported_series_description_collection.insert_one(entry_insert)
 
         for k, v in scatter_matrix.items():
             entry = {}
             entry['from_column'] = k
             for key, value in v.items():
                 entry['to_column'] = key
-                entry['graph'] = value
+                entry['graph'] = zlib.compress(value.encode())
                 entry['analysis'] = analysis
                 entry_insert = entry.copy()
                 scatter_matrix_collection.insert_one(entry_insert)

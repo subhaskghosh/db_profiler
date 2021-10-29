@@ -6,7 +6,10 @@ const dbTable = mongoose.model('tables');
 const alerts = mongoose.model('alerts');
 const samples = mongoose.model('samples');
 const table_stats = mongoose.model('table_stats');
-const series_descriptions = mongoose.model('series_descriptions');
+const numeric_series_descriptions = mongoose.model('numeric_series_descriptions');
+const categorical_series_descriptions = mongoose.model('categorical_series_descriptions');
+const boolean_series_descriptions = mongoose.model('boolean_series_descriptions');
+const unsupported_series_descriptions = mongoose.model('unsupported_series_descriptions');
 const missings = mongoose.model('missings');
 const correlations = mongoose.model('correlations');
 const scatter_matrices = mongoose.model('scatter_matrices');
@@ -48,13 +51,25 @@ router.get('/profile/:schema/:table', (req, res) => {
         table_stats.findOne({'analysis.schema':schema, 'analysis.table':table}),
         alerts.findOne({'analysis.schema':schema, 'analysis.table':table}),
         samples.findOne({'analysis.schema':schema, 'analysis.table':table}),
-        series_descriptions.findOne({'analysis.schema':schema, 'analysis.table':table}),
-        missings.findOne({'analysis.schema':schema, 'analysis.table':table}),
-        correlations.findOne({'analysis.schema':schema, 'analysis.table':table}),
-        scatter_matrices.findOne({'analysis.schema':schema, 'analysis.table':table})
+        numeric_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
+        categorical_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
+        boolean_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
+        unsupported_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
+        missings.find({'analysis.schema':schema, 'analysis.table':table}),
+        correlations.find({'analysis.schema':schema, 'analysis.table':table}),
+        scatter_matrices.find({'analysis.schema':schema, 'analysis.table':table})
     ])
     .then((result) => {
-        const [tableStats, stringAlerts, profileSamples, series_descriptions, missings, correlations, scatter_matrices] = result;
+        const [tableStats,
+                stringAlerts,
+                profileSamples,
+                numeric_series_descriptions,
+                categorical_series_descriptions,
+                boolean_series_descriptions,
+                unsupported_series_descriptions,
+                missings,
+                correlations,
+                scatter_matrices] = result;
 
         // Parse the alerts and add them to the series_descriptions
         var profileAlerts = {};
@@ -77,59 +92,59 @@ router.get('/profile/:schema/:table', (req, res) => {
             inx = inx + 1;
         }
 
-        for (const column_description of series_descriptions.Numeric) {
-            column_description['alerts'] = [];
+        for (const column_description of numeric_series_descriptions) {
+            column_description.result['alerts'] = [];
             index = 0;
             for (const alert of profileAlerts.alerts){
-                if (alert.column == column_description.column) {
-                    column_description['alerts'][index] = alert.type;
+                if (alert.column == column_description.variable) {
+                    column_description.result['alerts'][index] = alert.type;
                     index = index + 1;
                 }
             }
         }
 
-        for (const column_description of series_descriptions.Categorical) {
-            column_description['alerts'] = [];
+        for (const column_description of categorical_series_descriptions) {
+            column_description.result['alerts'] = [];
             index = 0;
             for (const alert of profileAlerts.alerts){
-                if (alert.column == column_description.column) {
-                    column_description['alerts'][index] = alert.type;
+                if (alert.column == column_description.variable) {
+                    column_description.result['alerts'][index] = alert.type;
                     index = index + 1;
                 }
             }
         }
 
-        for (const column_description of series_descriptions.Boolean) {
-            column_description['alerts'] = [];
+        for (const column_description of boolean_series_descriptions) {
+            column_description.result['alerts'] = [];
             index = 0;
             for (const alert of profileAlerts.alerts){
-                if (alert.column == column_description.column) {
-                    column_description['alerts'][index] = alert.type;
+                if (alert.column == column_description.variable) {
+                    column_description.result['alerts'][index] = alert.type;
                     index = index + 1;
                 }
             }
         }
 
-        for (const column_description of series_descriptions.Unsupported) {
-            column_description['alerts'] = [];
+        for (const column_description of unsupported_series_descriptions) {
+            column_description.result['alerts'] = [];
             index = 0;
             for (const alert of profileAlerts.alerts){
-                if (alert.column == column_description.column) {
-                    column_description['alerts'][index] = alert.type;
+                if (alert.column == column_description.variable) {
+                    column_description.result['alerts'][index] = alert.type;
                     index = index + 1;
                 }
             }
         }
 
-        for (const column_description of series_descriptions.Numeric) {
-            values_count = column_description.value_counts_without_nan
+        for (const column_description of numeric_series_descriptions) {
+            values_count = column_description.result.value_counts_without_nan
             var items = Object.keys(values_count).map(function(key) {
               return [key, values_count[key]];
             });
             items.sort(function(first, second) {
               return second[1] - first[1];
             });
-            column_description['samples'] = items.slice(0, 3);
+            column_description.result['samples'] = items.slice(0, 3);
         }
 
         //console.log(series_descriptions.Numeric[1].sample)
@@ -138,7 +153,10 @@ router.get('/profile/:schema/:table', (req, res) => {
                                 tableStats,
                                 profileAlerts,
                                 profileSamples,
-                                series_descriptions,
+                                numeric_series_descriptions,
+                                categorical_series_descriptions,
+                                boolean_series_descriptions,
+                                unsupported_series_descriptions,
                                 missings,
                                 correlations,
                                 scatter_matrices,

@@ -29,25 +29,25 @@ block content
                         .page-header
                             h2.mb-3.line-head Variables
 
-                each variable in series_descriptions.Numeric
+                each variable in numeric_series_descriptions
                     .tile.mb-4
                         .row
-                            +numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+                            +numericVariablesCard(variable.result, formatBytes, roundDecimal, convertSVG)
 
-                each variable in series_descriptions.Categorical
+                each variable in categorical_series_descriptions
                     .tile.mb-4
                         .row
-                            +categoricalVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+                            +categoricalVariablesCard(variable.result, formatBytes, roundDecimal, convertSVG)
 
-                each variable in series_descriptions.Boolean
+                each variable in boolean_series_descriptions
                     .tile.mb-4
                         .row
-                            +booleanVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+                            +booleanVariablesCard(variable.result, formatBytes, roundDecimal, convertSVG)
 
-                each variable in series_descriptions.Unsupported
+                each variable in unsupported_series_descriptions
                     .tile.mb-4
                         .row
-                            +unsupportedVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
+                            +unsupportedVariablesCard(variable.result, formatBytes, roundDecimal, convertSVG)
 
             .tile.mb-4
                 .row
