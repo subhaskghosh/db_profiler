@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Any, Dict, Optional
 import matplotlib.pyplot as plt
 from io import StringIO
-import zlib
+
 import pandas as pd
 import numpy as np
 import base64
@@ -100,7 +100,7 @@ def describe(
     plt.savefig(image_str, format='svg')
     plt.close()
     correlation_result_string = image_str.getvalue()
-    result_string = zlib.compress(correlation_result_string.encode())
+    result_string = correlation_result_string
 
 
     schemas_collection: Collection = target['schemas']
@@ -304,7 +304,7 @@ def describe(
                 plt.savefig(image_str, format='svg')
                 plt.close()
                 result_string = image_str.getvalue()
-                series_description[k]['histogram_graph'] = zlib.compress(result_string.encode())
+                series_description[k]['histogram_graph'] = result_string
 
         for k, v in series_description.items():
             if "word_counts" in v:
@@ -317,7 +317,7 @@ def describe(
                 plt.savefig(image_str, format='svg')
                 plt.close()
                 result_string = image_str.getvalue()
-                series_description[k]['word_counts_graph'] = zlib.compress(result_string.encode())
+                series_description[k]['word_counts_graph'] = result_string
 
         pbar.update()
 
@@ -399,7 +399,7 @@ def describe(
             entry['from_column'] = k
             for key, value in v.items():
                 entry['to_column'] = key
-                entry['graph'] = zlib.compress(value.encode())
+                entry['graph'] = value
                 entry['analysis'] = analysis
                 entry_insert = entry.copy()
                 scatter_matrix_collection.insert_one(entry_insert)

@@ -1,10 +1,9 @@
 mixin interactionsCard(scatter_matrices, convertSVG)
-     each from_columns in scatter_matrices.matrix
-        each to_columns in from_columns.tos
-          .col-md-4
-            .card.mb-4.shadow-sm
-              div&attributes({"width": "100%"}, {"height": "225"}, {"focusable": "false"}, {"role": "img"})
-                - var g = convertSVG(to_columns.graph)
-                img.img-fluid(src=g)
-              .card-body
-                .card-text Interaction between column: #{from_columns.from_column} and column: #{to_columns.to_column}
+     each interaction in scatter_matrices
+      .col-md-4
+        .card.mb-4.shadow-sm
+          div&attributes({"width": "100%"}, {"height": "225"}, {"focusable": "false"}, {"role": "img"})
+            - var g = convertSVG(interaction.graph)
+            img.img-fluid(src=g)
+          .card-body
+            .card-text Interaction between column: #{interaction.from_column} and column: #{interaction.to_column}

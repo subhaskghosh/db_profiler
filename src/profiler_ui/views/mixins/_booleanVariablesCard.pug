@@ -27,12 +27,3 @@ mixin booleanVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
                         td #{formatBytes(variable.memory_size)}
     .col-md-6
         .bs-component
-    .col-md-12
-        .bs-component
-            h4.tile-title Common Values
-            table.table.table-striped
-                tbody
-                    each val, key in variable.value_counts_index_sorted
-                        tr
-                            td #{key}
-                            td #{val}

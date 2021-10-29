@@ -61,13 +61,6 @@ mixin numericVariablesCard(variable, formatBytes, roundDecimal, convertSVG)
             h4.tile-title Histogram
             - var bimg = convertSVG(variable.histogram_graph)
             img.img-fluid(src=bimg)
-            h4.tile-title Frequent Values
-            table.table.table-striped
-                tbody
-                    each sample in variable.samples
-                        tr
-                            td #{sample[0]}
-                            td #{sample[1]}
     .col-md-6
         .bs-component
             h4.tile-title Quantile statistics

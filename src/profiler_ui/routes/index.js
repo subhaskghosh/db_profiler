@@ -13,7 +13,6 @@ const unsupported_series_descriptions = mongoose.model('unsupported_series_descr
 const missings = mongoose.model('missings');
 const correlations = mongoose.model('correlations');
 const scatter_matrices = mongoose.model('scatter_matrices');
-
 const svg64 = require('svg64');
 
 const convertSVG = function(im) {
@@ -94,6 +93,7 @@ router.get('/profile/:schema/:table', (req, res) => {
 
         for (const column_description of numeric_series_descriptions) {
             column_description.result['alerts'] = [];
+            column_description.result['column'] = column_description.variable
             index = 0;
             for (const alert of profileAlerts.alerts){
                 if (alert.column == column_description.variable) {
@@ -105,6 +105,7 @@ router.get('/profile/:schema/:table', (req, res) => {
 
         for (const column_description of categorical_series_descriptions) {
             column_description.result['alerts'] = [];
+            column_description.result['column'] = column_description.variable
             index = 0;
             for (const alert of profileAlerts.alerts){
                 if (alert.column == column_description.variable) {
@@ -116,6 +117,7 @@ router.get('/profile/:schema/:table', (req, res) => {
 
         for (const column_description of boolean_series_descriptions) {
             column_description.result['alerts'] = [];
+            column_description.result['column'] = column_description.variable
             index = 0;
             for (const alert of profileAlerts.alerts){
                 if (alert.column == column_description.variable) {
@@ -127,6 +129,7 @@ router.get('/profile/:schema/:table', (req, res) => {
 
         for (const column_description of unsupported_series_descriptions) {
             column_description.result['alerts'] = [];
+            column_description.result['column'] = column_description.variable
             index = 0;
             for (const alert of profileAlerts.alerts){
                 if (alert.column == column_description.variable) {
@@ -134,17 +137,6 @@ router.get('/profile/:schema/:table', (req, res) => {
                     index = index + 1;
                 }
             }
-        }
-
-        for (const column_description of numeric_series_descriptions) {
-            values_count = column_description.result.value_counts_without_nan
-            var items = Object.keys(values_count).map(function(key) {
-              return [key, values_count[key]];
-            });
-            items.sort(function(first, second) {
-              return second[1] - first[1];
-            });
-            column_description.result['samples'] = items.slice(0, 3);
         }
 
         //console.log(series_descriptions.Numeric[1].sample)

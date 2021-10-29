@@ -1,23 +1,7 @@
 mixin missingCard(missings, convertSVG)
-    .col-md-12
-        .bs-component
-            ul.nav.nav-tabs
-                li.nav-item
-                    a.nav-link.active(data-toggle='tab', href='#count') #{missings.bar.name}
-                li.nav-item
-                    a.nav-link(data-toggle='tab', href='#matrix') #{missings.matrix.name}
-                li.nav-item
-                    a.nav-link(data-toggle='tab', href='#Dendrogram') #{missings.dendrogram.name}
-            #myTabContent.tab-content
-                #count.tab-pane.fade.active.show
-                    - var bimg = convertSVG(missings.bar.matrix)
-                    img.img-fluid(src=bimg)
-                    p(style="text-align:center;") #{missings.bar.caption}
-                #matrix.tab-pane.fade
-                    - var mimg = convertSVG(missings.matrix.matrix)
-                    img.img-fluid(src=mimg)
-                    p(style="text-align:center;") #{missings.matrix.caption}
-                #Dendrogram.tab-pane.fade
-                    - var dimg = convertSVG(missings.dendrogram.matrix)
-                    img.img-fluid(src=dimg)
-                    p(style="text-align:center;") #{missings.dendrogram.caption}
+    each missing in missings
+        .col-md-12
+            .bs-component
+                - var bimg = convertSVG(missing.result.matrix)
+                img.img-fluid(src=bimg)
+                p(style="text-align:center;") #{missing.result.caption}

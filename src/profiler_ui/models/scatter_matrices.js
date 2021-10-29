@@ -24,6 +24,15 @@ const scatter_matrices = new mongoose.Schema({
   "_id": {
     "type": "ObjectId"
   },
+  "from_column": {
+    "type": "String"
+  },
+  "to_column": {
+    "type": "String"
+  },
+  "graph": {
+    "type": "String"
+  },
   "analysis": {
     "schema": {
       "type": "String"
@@ -40,11 +49,6 @@ const scatter_matrices = new mongoose.Schema({
     "date_end": {
       "type": "Date"
     }
-  },
-  "matrix": {
-    "type": [
-      froms
-    ]
   }
 });
 
