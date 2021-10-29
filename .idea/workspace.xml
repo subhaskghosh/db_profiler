@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9278a2ef-27b7-4c43-be7a-b0f9629c41d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profiler_ui/models/missings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/missings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,32 +15,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="136" column="38" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron-profile.pug">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/profile.pug">
+        <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+            <state relative-caret-position="755">
+              <caret line="336" column="54" selection-start-line="336" selection-start-column="54" selection-end-line="336" selection-end-column="54" />
+              <folding>
+                <element signature="e#80#91#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profiler_ui/.env">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -64,6 +50,7 @@
       <find>tabpanel</find>
       <find>histo</find>
       <find>wor</find>
+      <find>env</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,14 +87,11 @@
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_samplesCard.pug" />
         <option value="$PROJECT_DIR$/src/pandas_profiling/visualisation/utils.py" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug" />
-        <option value="$PROJECT_DIR$/src/profiler_ui/models/missings.js" />
-        <option value="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/scatter_matrices.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/start.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_interactionsCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_missingCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/series_descriptions.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_unsupportedVariablesCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_categoricalVariablesCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug" />
@@ -117,12 +101,15 @@
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_alertsCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/table_stats.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_overviewCard.pug" />
-        <option value="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/includes/1536528109.svg" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/includes/logo.svg" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/includes/header.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/profiler_ui/models/missings.js" />
+        <option value="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" />
+        <option value="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" />
       </list>
     </option>
   </component>
@@ -155,7 +142,27 @@
               <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pandas_profiling" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pandas_profiling" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="db_profiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="db_profiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="profiler_ui" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +332,7 @@
     <frame x="0" y="27" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Project Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -333,7 +340,7 @@
       <window_info id="Job Explorer" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2140351" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29122806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38128656" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -380,23 +387,28 @@
           <line>115</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py</url>
-          <line>333</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>scatter_matrix</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>update_scatter_matrix</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>series_description</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>len(left_edges)</expression-string>
+        <expression-string>res</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -411,22 +423,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>update_scatter_matrix</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
         <expression-string>update_series_description</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>scatter_matrix</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result_string</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -435,16 +432,14 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
+      <expression>
+        <expression-string>len(left_edges)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.conda/envs/t20/lib/python3.7/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="963" column="4" selection-start-line="963" selection-start-column="4" selection-end-line="963" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pandas_profiling/report/presentation/flavours/html/templates/diagram.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -501,13 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="16693" column="36" selection-start-line="16693" selection-start-column="33" selection-end-line="16693" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/missings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-384">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -572,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/correlations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/missing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -615,16 +596,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/docs/Screen.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug">
       <provider selected="true" editor-type-id="text-editor">
@@ -682,16 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="100" column="52" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
-          <folding>
-            <element signature="e#80#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/1536528109.svg" />
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/logo.svg">
       <provider selected="true" editor-type-id="images" />
@@ -727,16 +688,6 @@
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron.pug">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="38" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron-profile.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/.env">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -747,10 +698,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="150">
+            <caret line="10" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/profile.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="424">
           <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron-profile.pug">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="136" column="38" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/missings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/correlations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="336" column="54" selection-start-line="336" selection-start-column="54" selection-end-line="336" selection-end-column="54" />
+          <folding>
+            <element signature="e#80#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

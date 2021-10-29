@@ -1,7 +1,13 @@
 # db_profiler
 A profiler based on pandas-profiling but connects to postgresql and then stores metadata to mongo with an API and UI interface
 
-execute python ./pandas_profiling/controller/console.py postgresql+psycopg2://postgres:password@host:port/db schema table mongodb://host:27017/
+- Install node 16
+- cd profiler_ui - npm install
+- Install mongodb
+- modify .env
+- npm run
+- execute python ./pandas_profiling/controller/console.py postgresql+psycopg2://postgres:password@host:port/db schema table mongodb://host:27017/
+- Will create profile
 
 UI:
 ![Page 1](src/docs/Screen.png)

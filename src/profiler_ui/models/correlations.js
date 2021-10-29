@@ -21,11 +21,10 @@ const correlations = new mongoose.Schema({
       "type": "Date"
     }
   },
-  "spearman": {type : Array , "default" : []},
-  "pearson": {type : Array , "default" : []},
-  "kendall": {type : Array , "default" : []},
-  "cramers": {type : Array , "default" : []},
-  "phi_k": {type : Array , "default" : []}
+  "algorithm": {
+    "type": "String"
+  },
+  "result": {type : Array , "default" : []}
 });
 
 module.exports = mongoose.model('correlations', correlations);

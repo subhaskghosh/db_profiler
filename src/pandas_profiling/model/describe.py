@@ -247,8 +247,6 @@ def describe(
         alrt["analysis"] = analysis
         alrt['alerts'] = alerts
 
-        correlations["analysis"] = analysis
-        missing["analysis"] = analysis
         table_stats["analysis"] = analysis
         table_stats["correlation_plot"] = correlation_result_string
 
@@ -261,6 +259,8 @@ def describe(
         columns['variables'] = variables
         columns['analysis'] = analysis
 
+        pbar.set_postfix_str("Encoding")
+
         schema = encode_it(format_summary(schema))
         table = encode_it(format_summary(table))
         alrt = encode_it(format_summary(alrt))
@@ -272,29 +272,6 @@ def describe(
         sample = encode_it(format_summary(sample))
         duplicates = encode_it(format_summary(duplicates))
         columns = encode_it(format_summary(columns))
-
-        update_series_description = {}
-        for sd in series_description.items():
-            sd[1]['column'] = sd[0]
-            if sd[1]['type'] in update_series_description:
-                update_series_description[sd[1]['type']].append(sd[1])
-            else:
-                update_series_description[sd[1]['type']] = [sd[1]]
-        update_series_description["analysis"] = analysis
-
-        update_scatter_matrix = {}
-        update_scatter_matrix['matrix'] = []
-
-        for k,v in scatter_matrix.items():
-            entry = {}
-            entry['from_column'] = k
-            entry['tos'] = []
-            for key, value in v.items():
-                sub_entry = {}
-                sub_entry['to_column'] = key
-                sub_entry['graph'] = value
-                entry['tos'].append(sub_entry)
-            update_scatter_matrix['matrix'].append(entry)
 
         for k, v in series_description.items():
             histogram_data = None
@@ -331,18 +308,51 @@ def describe(
                 result_string = image_str.getvalue()
                 series_description[k]['word_counts_graph'] = result_string
 
-        update_scatter_matrix["analysis"] = analysis
+        pbar.update()
+
+        pbar.set_postfix_str("Inserting")
+
         schemas_collection.insert_one(schema)
         tables_collection.insert_one(table)
         alerts_collection.insert_one(alrt)
-        correlations_collection.insert_one(correlations)
-        missing_collection.insert_one(missing)
         table_stats_collection.insert_one(table_stats)
-        series_description_collection.insert_one(update_series_description)
-        scatter_matrix_collection.insert_one(update_scatter_matrix)
         samples_collection.insert_one(sample)
         duplicates_collection.insert_one(duplicates)
         variables_collection.insert_one(columns)
+
+        for k, v in correlations.items():
+            res = {}
+            res["analysis"] = analysis
+            res['algorithm'] = k
+            res['matrix'] = v
+            entry_insert = res.copy()
+            correlations_collection.insert_one(entry_insert)
+
+        for k, v in missing.items():
+            res = {}
+            res["analysis"] = analysis
+            res['graph_type'] = k
+            res['result'] = v
+            entry_insert = res.copy()
+            missing_collection.insert_one(entry_insert)
+
+        for k, v in series_description.items():
+            res = {}
+            res["analysis"] = analysis
+            res['variable'] = k
+            res['result'] = v
+            entry_insert = res.copy()
+            series_description_collection.insert_one(entry_insert)
+
+        for k, v in scatter_matrix.items():
+            entry = {}
+            entry['from_column'] = k
+            for key, value in v.items():
+                entry['to_column'] = key
+                entry['graph'] = value
+                entry['analysis'] = analysis
+                entry_insert = entry.copy()
+                scatter_matrix_collection.insert_one(entry_insert)
 
         pbar.update()
 
