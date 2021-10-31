@@ -1,13 +1,58 @@
 doctype html
 html
   head
-    title Postgres Profiler
+    title Postgres Profiler - profile of #{schema}.#{table}
     link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', type='text/css', href='../../css/main.css')
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+    script.
+        const updateGraph = function(buttonId, schema, table, column) {
+            if (buttonId == 'INTERACTIONVAR1') {
+                var from = column;
+                var to = $('#INTERACTIONVAR2').text();
+
+                fetch('/profile/' + schema + '/' + table + '/' + from + '/' + to, {method: 'GET'})
+                    .then(function(response) {
+                      if(response.ok) {
+                        return response.json();
+                      }
+                      throw new Error('Request failed.');
+                    })
+                    .then(function(responseJson) {
+                        console.log(responseJson);
+                        $("#INTERACTIONGRAPH").attr('src', responseJson.graph);
+                        $("#INTERACTIONTEXT").text('Interaction between column: ' + responseJson.from_column + ' and column: ' + responseJson.to_column);
+                        $("#"+buttonId).text(column);
+                    })
+                    .catch(function(error) {
+                      console.log(error);
+                    });
+            } else {
+                var from = $('#INTERACTIONVAR1').text();
+                var to = column;
+
+                fetch('/profile/' + schema + '/' + table + '/' + from + '/' + to, {method: 'GET'})
+                    .then(function(response) {
+                      if(response.ok) {
+                        return response.json();
+                      }
+                      throw new Error('Request failed.');
+                    })
+                    .then(function(responseJson) {
+                        console.log(responseJson);
+                        $("#INTERACTIONGRAPH").attr('src', responseJson.graph);
+                        $("#INTERACTIONTEXT").text('Interaction between column: ' + responseJson.from_column + ' and column: ' + responseJson.to_column);
+                        $("#"+buttonId).text(column);
+                    })
+                    .catch(function(error) {
+                      console.log(error);
+                    });
+            }
+        };
 
     style.
       .bd-placeholder-img {
@@ -26,6 +71,11 @@ html
 
       footer p {
         margin-bottom: .25rem;
+      }
+
+      .dropdown-menu{
+        max-height: 400px;
+        overflow-y: auto;
       }
 
       @media (min-width: 768px) {

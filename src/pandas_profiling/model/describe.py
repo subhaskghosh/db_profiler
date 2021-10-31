@@ -1,13 +1,10 @@
 """Organize the calculation of statistics for each series in this DataFrame."""
-import json
 from datetime import datetime
 from typing import Any, Dict, Optional
 import matplotlib.pyplot as plt
 from io import StringIO
-
 import pandas as pd
 import numpy as np
-import base64
 from pymongo.collection import Collection
 from pymongo.database import Database
 from tqdm.auto import tqdm
@@ -29,9 +26,6 @@ from pandas_profiling.model.summary import get_series_descriptions
 from pandas_profiling.model.table import get_table_stats
 from pandas_profiling.utils.progress_bar import progress
 from pandas_profiling.version import __version__
-
-import seaborn as sns
-sns.set(style="whitegrid")
 
 def encode_it(o: Any, t: str='value') -> Any:
     if isinstance(o, dict):
@@ -91,17 +85,6 @@ def describe(
 
     check_dataframe(df)
     df = preprocess(config, df)
-
-    cmap = sns.diverging_palette(220, 10, as_cmap=True)
-    f, ax = plt.subplots(figsize=(20, 13))
-    sns.heatmap(df.corr(), cmap=cmap, annot=True, fmt='.1g')
-    f.tight_layout()
-    image_str = StringIO()
-    plt.savefig(image_str, format='svg')
-    plt.close()
-    correlation_result_string = image_str.getvalue()
-    result_string = correlation_result_string
-
 
     schemas_collection: Collection = target['schemas']
     tables_collection: Collection = target['tables']
@@ -259,7 +242,6 @@ def describe(
         alrt['alerts'] = alerts
 
         table_stats["analysis"] = analysis
-        table_stats["correlation_plot"] = result_string
 
         sample = {}
         sample["analysis"] = analysis
@@ -267,7 +249,12 @@ def describe(
         duplicates["analysis"] = analysis
 
         columns = {}
-        columns['variables'] = variables
+        columns['variables'] = []
+        for k, v in variables.items():
+            item = {}
+            item['name'] = k
+            item['type'] = v
+            columns['variables'].append(item)
         columns['analysis'] = analysis
 
         pbar.set_postfix_str("Encoding")

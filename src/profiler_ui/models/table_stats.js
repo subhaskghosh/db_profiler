@@ -35,9 +35,6 @@ const table_stats = new mongoose.Schema({
   "p_duplicates": {
     "type": "Number"
   },
-  "correlation_plot": {
-      "type": "String"
-  },
   "analysis": {
     "schema": {
       "type": "String"

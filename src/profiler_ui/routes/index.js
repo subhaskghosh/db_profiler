@@ -4,6 +4,7 @@ const router = express.Router();
 
 const dbTable = mongoose.model('tables');
 const alerts = mongoose.model('alerts');
+const variables = mongoose.model('variables');
 const samples = mongoose.model('samples');
 const table_stats = mongoose.model('table_stats');
 const numeric_series_descriptions = mongoose.model('numeric_series_descriptions');
@@ -14,6 +15,7 @@ const missings = mongoose.model('missings');
 const correlations = mongoose.model('correlations');
 const scatter_matrices = mongoose.model('scatter_matrices');
 const svg64 = require('svg64');
+
 
 const convertSVG = function(im) {
     return svg64(im);
@@ -48,6 +50,7 @@ router.get('/profile/:schema/:table', (req, res) => {
     var table = req.params.table
     Promise.all([
         table_stats.findOne({'analysis.schema':schema, 'analysis.table':table}),
+        variables.findOne({'analysis.schema':schema, 'analysis.table':table}),
         alerts.findOne({'analysis.schema':schema, 'analysis.table':table}),
         samples.findOne({'analysis.schema':schema, 'analysis.table':table}),
         numeric_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
@@ -56,10 +59,11 @@ router.get('/profile/:schema/:table', (req, res) => {
         unsupported_series_descriptions.find({'analysis.schema':schema, 'analysis.table':table}),
         missings.find({'analysis.schema':schema, 'analysis.table':table}),
         correlations.find({'analysis.schema':schema, 'analysis.table':table}),
-        scatter_matrices.find({'analysis.schema':schema, 'analysis.table':table})
+        scatter_matrices.findOne({'analysis.schema':schema, 'analysis.table':table})
     ])
     .then((result) => {
         const [tableStats,
+                variables,
                 stringAlerts,
                 profileSamples,
                 numeric_series_descriptions,
@@ -143,6 +147,7 @@ router.get('/profile/:schema/:table', (req, res) => {
         res.render('profile', {schema,
                                 table,
                                 tableStats,
+                                variables,
                                 profileAlerts,
                                 profileSamples,
                                 numeric_series_descriptions,
@@ -160,6 +165,27 @@ router.get('/profile/:schema/:table', (req, res) => {
         console.log(err);
         res.send('Sorry! Something went wrong.');
     });
+});
+
+router.get('/profile/:schema/:table/:from/:to', (req, res) => {
+    var schema = req.params.schema;
+    var table = req.params.table;
+    var from = req.params.from;
+    var to = req.params.to;
+    console.log(req.params);
+    scatter_matrices.findOne({'analysis.schema':schema, 'analysis.table':table, 'from_column':from, 'to_column':to})
+        .then((result) => {
+            var back = {
+                'from_column': result.from_column,
+                'to_column': result.to_column,
+                'graph': convertSVG(result.graph)
+            };
+
+            res.json(back);
+        })
+        .catch(() => { res.json({'from_column': '',
+                'to_column': '',
+                'graph': ''}); });
 });
 
 module.exports = router;

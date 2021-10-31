@@ -1,9 +1,27 @@
-mixin interactionsCard(scatter_matrices, convertSVG)
-     each interaction in scatter_matrices
-      .col-md-4
-        .card.mb-4.shadow-sm
-          div&attributes({"width": "100%"}, {"height": "225"}, {"focusable": "false"}, {"role": "img"})
-            - var g = convertSVG(interaction.graph)
-            img.img-fluid(src=g)
-          .card-body
-            .card-text Interaction between column: #{interaction.from_column} and column: #{interaction.to_column}
+mixin interactionsCard(schema, table, variables, scatter_matrices, convertSVG)
+    .row(style='margin-bottom: 2rem; margin-left: 1rem;')
+        .bs-component
+            .col-md-12
+                .btn-group(role='group', aria-label='Interaction')
+                    button.btn.btn-primary(type='button', id='INTERACTIONVAR1') #{scatter_matrices.from_column}
+                    .btn-group(role='group')
+                        button#btnGroupDrop1.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        .dropdown-menu.dropdown-menu-right
+                            each variable in variables.variables
+                                if variable.type == 'Numeric'
+                                    a.dropdown-item(onclick='updateGraph("INTERACTIONVAR1", "' + schema  + '","' + table  + '","' + variable.name + '")') #{variable.name}
+                .btn-group(role='group', aria-label='Interaction')
+                    button.btn.btn-primary(type='button', id='INTERACTIONVAR2') #{scatter_matrices.to_column}
+                    .btn-group(role='group')
+                        button#btnGroupDrop1.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        .dropdown-menu.dropdown-menu-right
+                            each variable in variables.variables
+                                if variable.type == 'Numeric'
+                                    a.dropdown-item(onclick='updateGraph("INTERACTIONVAR2", "' + schema  + '","' + table  + '","' + variable.name + '")') #{variable.name}
+    .row
+        .col-md-12
+            .bs-component
+                .div
+                    - var bimg = convertSVG(scatter_matrices.graph)
+                    img.img-fluid(id="INTERACTIONGRAPH", src=bimg)
+                    p(id="INTERACTIONTEXT", style="text-align:center;") Interaction between column: #{scatter_matrices.from_column} and column: #{scatter_matrices.to_column}

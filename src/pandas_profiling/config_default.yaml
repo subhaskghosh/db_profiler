@@ -80,7 +80,7 @@ missing_diagrams:
     bar: true
     matrix: true
     heatmap: true
-    dendrogram: true
+    dendrogram: false
 
 correlations:
     pearson:

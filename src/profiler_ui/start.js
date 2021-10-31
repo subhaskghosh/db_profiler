@@ -16,6 +16,7 @@ mongoose.connection
 
 require('./models/schemas');
 require('./models/tables');
+require('./models/variables');
 require('./models/alerts');
 require('./models/samples');
 require('./models/table_stats');

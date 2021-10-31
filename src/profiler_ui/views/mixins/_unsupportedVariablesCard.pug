@@ -1,7 +1,9 @@
 mixin unsupportedVariablesCard(variable, formatBytes, roundDecimal)
+    .col-md-12
+        .bs-component
+            h4.tile-title #{variable.column}
     .col-md-3
         .bs-component
-                h4.tile-title #{variable.column}
                 span.badge.badge-info Unsupported
                 each alert in variable.alerts
                     div
