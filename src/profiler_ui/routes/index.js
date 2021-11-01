@@ -172,7 +172,7 @@ router.get('/profile/:schema/:table/:from/:to', (req, res) => {
     var table = req.params.table;
     var from = req.params.from;
     var to = req.params.to;
-    console.log(req.params);
+
     scatter_matrices.findOne({'analysis.schema':schema, 'analysis.table':table, 'from_column':from, 'to_column':to})
         .then((result) => {
             var back = {

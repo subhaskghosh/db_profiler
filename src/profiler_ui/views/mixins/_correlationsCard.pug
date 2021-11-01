@@ -1,0 +1,11 @@
+mixin correlationsCard(correlations, convertSVG)
+    each corr in correlations
+        .row
+            .col-lg-7
+                .bs-component
+                    - var bimg = convertSVG(corr.matrix)
+                    img.img-fluid(src=bimg)
+            .col-lg-4
+                .bs-component
+                    h4(style="text-align:center;") #{corr.algorithm}
+                    span(style="text-align:center;") #{corr.description}

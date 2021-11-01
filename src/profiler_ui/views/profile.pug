@@ -9,6 +9,7 @@ include mixins/_booleanVariablesCard
 include mixins/_unsupportedVariablesCard
 include mixins/_missingCard
 include mixins/_interactionsCard
+include mixins/_correlationsCard
 
 block content
     .album.py-5.bg-light
@@ -62,9 +63,7 @@ block content
                         .page-header
                             h2.mb-3.line-head Correlations
                     .row
-                        .col-lg-12
-                            - var bimg = convertSVG(tableStats.correlation_plot)
-                            img.img-fluid(src=bimg)
+                        +correlationsCard(correlations, convertSVG)
             .tile.mb-4
                 .row
                     .col-lg-12

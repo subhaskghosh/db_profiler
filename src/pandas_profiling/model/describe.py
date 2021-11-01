@@ -26,6 +26,8 @@ from pandas_profiling.model.summary import get_series_descriptions
 from pandas_profiling.model.table import get_table_stats
 from pandas_profiling.utils.progress_bar import progress
 from pandas_profiling.version import __version__
+from pandas_profiling.visualisation import plot
+
 
 def encode_it(o: Any, t: str='value') -> Any:
     if isinstance(o, dict):
@@ -166,7 +168,55 @@ def describe(
             key: value for key, value in correlations.items() if value is not None
         }
 
-        # Scatter matrix
+        pearson_description = (
+            "The Pearson's correlation coefficient (r) is a measure of linear correlation "
+            "between two variables. It's value lies between -1 and +1, -1 indicating total negative "
+            "linear correlation, 0 indicating no linear correlation and 1 indicating total positive "
+            "linear correlation. Furthermore, r is invariant under separate changes in location "
+            "and scale of the two variables, implying that for a linear function the angle to the "
+            "x-axis does not affect r. To calculate r for two "
+            "variables X and Y, one divides the covariance of X and "
+            "Y by the product of their standard deviations. "
+        )
+        spearman_description = """The Spearman's rank correlation coefficient (ρ) is a measure of monotonic 
+            correlation between two variables, and is therefore better in catching nonlinear monotonic correlations than 
+            Pearson's r. It's value lies between -1 and +1, -1 indicating total negative monotonic correlation, 
+            0 indicating no monotonic correlation and 1 indicating total positive monotonic correlation. To 
+            calculate ρ for two variables X and Y, one divides the covariance of the rank 
+            variables of X and Y by the product of their standard deviations. """
+
+        kendall_description = """Similarly to Spearman's rank correlation coefficient, the Kendall rank correlation 
+            coefficient (τ) measures ordinal association between two variables. It's value lies between -1 and +1, 
+            -1 indicating total negative correlation, 0 indicating no correlation and 1 indicating total positive correlation.
+            To calculate τ for two variables X and Y, one determines the number of 
+            concordant and discordant pairs of observations. τ is given by the number of concordant pairs minus the 
+            discordant pairs divided by the total number of pairs."""
+
+        phi_k_description = """Phik (φk) is a new and practical correlation coefficient that works consistently between categorical, ordinal and interval variables, captures non-linear dependency and reverts to the Pearson correlation coefficient in case
+            of a bivariate normal input distribution. There is extensive documentation available here: https://phik.readthedocs.io/en/latest/index.html"""
+
+        cramers_description = """Cramér's V is an association measure for nominal random variables. The coefficient ranges from 0 to 1, with 0 indicating independence and 1 indicating perfect association.
+            The empirical estimators used for Cramér's V have been proved to be biased, even for large samples.
+            We use a bias-corrected measure that has been proposed by Bergsma in 2013 that can be found here: http://stats.lse.ac.uk/bergsma/pdf/cramerV3.pdf"""
+
+        key_to_data = {
+            "pearson": (-1, "Pearson's r", pearson_description),
+            "spearman": (-1, "Spearman's ρ", spearman_description),
+            "kendall": (-1, "Kendall's τ", kendall_description),
+            "phi_k": (0, "Phik (φk)", phi_k_description),
+            "cramers": (0, "Cramér's V (φc)", cramers_description),
+        }
+
+        correlations_diagram = {}
+
+        for k, v in correlations.items():
+            vmin, name, description = key_to_data[k]
+            correlations_diagram[k] = {}
+            correlations_diagram[k]['matrix'] = plot.correlation_matrix(config, v, vmin=vmin)
+            correlations_diagram[k]['name'] = name
+            correlations_diagram[k]['description'] = description
+
+            # Scatter matrix
         pbar.set_postfix_str("Get scatter matrix")
         scatter_tasks = get_scatter_tasks(config, interval_columns)
         pbar.total += len(scatter_tasks)
@@ -262,7 +312,7 @@ def describe(
         schema = encode_it(format_summary(schema))
         table = encode_it(format_summary(table))
         alrt = encode_it(format_summary(alrt))
-        correlations = encode_it(format_summary(correlations))
+        correlations_diagram = encode_it(format_summary(correlations_diagram))
         missing = encode_it(format_summary(missing))
         table_stats = encode_it(format_summary(table_stats))
         series_description = encode_it(format_summary(series_description))
@@ -318,11 +368,12 @@ def describe(
         duplicates_collection.insert_one(duplicates)
         variables_collection.insert_one(columns)
 
-        for k, v in correlations.items():
+        for k, v in correlations_diagram.items():
             res = {}
             res["analysis"] = analysis
-            res['algorithm'] = k
-            res['matrix'] = v
+            res['algorithm'] = v['name']
+            res['matrix'] = v['matrix']
+            res['description'] = v['description']
             entry_insert = res.copy()
             correlations_collection.insert_one(entry_insert)
 
@@ -335,9 +386,10 @@ def describe(
             missing_collection.insert_one(entry_insert)
 
         for k, v in series_description.items():
-            del v['value_counts_without_nan']
-            del v['value_counts_index_sorted']
             if v['type'] == 'Numeric':
+                del v['value_counts_without_nan']
+                del v['value_counts_index_sorted']
+
                 res = {}
                 res["analysis"] = analysis
                 res['variable'] = k
@@ -346,6 +398,8 @@ def describe(
                 entry_insert = res.copy()
                 numeric_series_description_collection.insert_one(entry_insert)
             elif v['type'] == 'Categorical':
+                del v['value_counts_without_nan']
+                del v['value_counts_index_sorted']
                 del v['character_counts']
                 del v['category_alias_values']
                 del v['block_alias_values']
@@ -365,6 +419,7 @@ def describe(
                 entry_insert = res.copy()
                 categorical_series_description_collection.insert_one(entry_insert)
             elif v['type'] == 'Boolean':
+                del v['value_counts_without_nan']
                 res = {}
                 res["analysis"] = analysis
                 res['variable'] = k
@@ -373,6 +428,7 @@ def describe(
                 entry_insert = res.copy()
                 boolean_series_description_collection.insert_one(entry_insert)
             else:
+                del v['value_counts_without_nan']
                 res = {}
                 res["analysis"] = analysis
                 res['variable'] = k

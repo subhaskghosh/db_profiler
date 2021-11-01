@@ -40,6 +40,7 @@ const unsupported_type = new mongoose.Schema({
   "memory_size": {
     "type": "Number"
   },
+  "value_counts_index_sorted": {},
   "column": {
     "type": "String"
   }

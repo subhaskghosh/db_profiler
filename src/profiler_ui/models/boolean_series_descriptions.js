@@ -43,6 +43,7 @@ const booleaan_type = new mongoose.Schema({
   "mode": {
     "type": "String"
   },
+  "value_counts_index_sorted": {},
   "column": {
     "type": "String"
   }

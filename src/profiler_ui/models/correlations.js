@@ -24,7 +24,12 @@ const correlations = new mongoose.Schema({
   "algorithm": {
     "type": "String"
   },
-  "result": {type : Array , "default" : []}
+  "matrix": {
+    "type": "String"
+  },
+  "description": {
+    "type": "String"
+  }
 });
 
 module.exports = mongoose.model('correlations', correlations);
