@@ -1,4 +1,5 @@
 """Organize the calculation of statistics for each series in this DataFrame."""
+from collections import Counter
 from datetime import datetime
 from typing import Any, Dict, Optional
 import matplotlib.pyplot as plt
@@ -429,11 +430,16 @@ def describe(
                 boolean_series_description_collection.insert_one(entry_insert)
             else:
                 del v['value_counts_without_nan']
+                value_counts_index_sorted = v['value_counts_index_sorted']
+                d = Counter(value_counts_index_sorted)
+                v['value_counts_index_sorted'] = {}
+                for key, val in d.most_common(5):
+                    v['value_counts_index_sorted'][k] = val
                 res = {}
                 res["analysis"] = analysis
                 res['variable'] = k
                 res['result'] = v
-                res['type'] = 'Unsupported'
+                res['type'] = v['type']
                 entry_insert = res.copy()
                 unsupported_series_description_collection.insert_one(entry_insert)
 

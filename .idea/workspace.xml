@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9278a2ef-27b7-4c43-be7a-b0f9629c41d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/public/assets/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/public/assets/images/favicon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_correlationsCard.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/models/boolean_series_descriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/boolean_series_descriptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/layout.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_unsupportedVariablesCard.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/mixins/_unsupportedVariablesCard.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +13,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="435" column="49" lean-forward="true" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
+              <folding>
+                <element signature="e#80#111#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/layout.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -33,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -45,29 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/mixins/_correlationsCard.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="72" lean-forward="true" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="430" column="49" selection-start-line="430" selection-start-column="49" selection-end-line="430" selection-end-column="49" />
-              <folding>
-                <element signature="e#80#109#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="269">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -184,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/profiler_ui/start.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_overviewCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/table_stats.js" />
-        <option value="$PROJECT_DIR$/src/profiler_ui/routes/index.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_interactionsCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_thumbCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/includes/jumbotron.pug" />
@@ -194,13 +181,14 @@
         <option value="$PROJECT_DIR$/src/profiler_ui/models/correlations.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_correlationsCard.pug" />
-        <option value="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/boolean_series_descriptions.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_booleanVariablesCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/mixins/_unsupportedVariablesCard.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/layout.pug" />
         <option value="$PROJECT_DIR$/src/profiler_ui/views/profile_layout.pug" />
+        <option value="$PROJECT_DIR$/src/profiler_ui/routes/index.js" />
+        <option value="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" />
       </list>
     </option>
   </component>
@@ -523,7 +511,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1680" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -908,23 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="157" column="44" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="430" column="49" selection-start-line="430" selection-start-column="49" selection-end-line="430" selection-end-column="49" />
-          <folding>
-            <element signature="e#80#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/mixins/_correlationsCard.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -953,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/profiler_ui/views/includes/header.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -985,6 +948,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profiler_ui/models/unsupported_series_descriptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pandas_profiling/model/describe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="435" column="49" lean-forward="true" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
+          <folding>
+            <element signature="e#80#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
