@@ -14,6 +14,16 @@ html
 
     // Font-icon css
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+    script.
+        const showProfileForm = function() {
+            if(!$('#PROFILEFORM').is(':visible')) {
+                $("#PROFILEFORM").show();
+            } else {
+                $("#PROFILEFORM").hide();
+            }
+        };
+
     style.
       .bd-placeholder-img {
         font-size: 1.125rem;

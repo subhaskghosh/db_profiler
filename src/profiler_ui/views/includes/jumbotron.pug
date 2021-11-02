@@ -2,3 +2,30 @@ section.jumbotron.text-center
     .container
         h1 Postgres profiler
         p.lead.text-muted  This application allows you to profile a postgres table and view quantile statistics, descriptive statistics, histograms, correlations, missing values, duplicates etc. for each column.
+        a.btn.btn-primary.m-2(href="#") Create a new profile
+        div(id="PROFILEFORM", style="display: none;")
+            .clearix
+            .col-md-12
+                .tile-body
+                    form(method="POST" action="/scan")
+                        .row
+                            .form-group.col-md-6
+                                label.col-form-label(for='PGURL', style="display: inline-block; width: 100%; text-align: left;")  Postgres URL
+                                input#PGURL.form-control(name='pgurl', type='text', placeholder='e.g. postgresql+psycopg2://user:pwd@localhost:5432/db')
+                            .form-group.col-md-3
+                                label.col-form-label(for='SCHEMA', style="display: inline-block; width: 100%; text-align: left;")  Schema
+                                input#SCHEMA.form-control(name='schema', type='text', placeholder='e.g. schema')
+                            .form-group.col-md-3
+                                label.col-form-label(for='TABLE', style="display: inline-block; width: 100%; text-align: left;")  Table
+                                input#TABLE.form-control(name='table', type='text', placeholder='e.g. table')
+                        .row
+                            .form-group.col-md-6
+                                label.col-form-label(for='MONGOURL', style="display: inline-block; width: 100%; text-align: left;")  Mongodb URL
+                                input#MONGOURL.form-control(name='mongourl', type='text', placeholder='e.g. mongodb://localhost:27017/')
+                            .form-check.col-md-3
+                                label.form-check-label(style="display: inline-block; width: 90%; text-align: left; padding-top: 40px;")
+                                    input#INFERTYPE.form-check-input(name='inferflag', type='checkbox')
+                                    | Infer Data Type
+                            .form-check.col-md-3
+                                div(style="display: inline-block; width: 100%; text-align: right; padding-top: 30px;")
+                                    button.btn.btn-primary(type='submit') Submit

@@ -188,4 +188,22 @@ router.get('/profile/:schema/:table/:from/:to', (req, res) => {
                 'graph': ''}); });
 });
 
+router.post('/scan', (req, res) => {
+    console.log(req.body);
+    var pgurl = req.body.pgurl;
+    var schema = req.body.schema;
+    var table  = req.body.table;
+    var mongourl = req.body.mongourl;
+    var extraconfig = '--config_file /Users/ghoshsk/src/ds/db_profiler/src/pandas_profiling/config_default.yaml'
+
+    const spawn = require("child_process").spawn;
+    const pythonProcess = spawn('python',[process.env.PYCONSOLE, pgurl, schema, table, mongourl, extraconfig]);
+
+    dbTable.find()
+    .then((dbtables) => {
+      res.render('index', { dbtables });
+    })
+    .catch(() => { res.send('Sorry! Something went wrong.'); });
+});
+
 module.exports = router;
