@@ -1,0 +1,1682 @@
+{
+  "sql": [
+    {
+      "statement": [
+        {
+          "schema_statement": [
+            {
+              "schema_drop": [
+                {
+                  "line": 1,
+                  "type": 76,
+                  "text": "DROP",
+                  "cpos": 0
+                },
+                {
+                  "drop_statements": [
+                    {
+                      "line": 1,
+                      "type": 443,
+                      "text": "TABLE",
+                      "cpos": 5
+                    },
+                    {
+                      "if_exist_names_restrict_cascade": [
+                        {
+                          "if_exists": [
+                            {
+                              "line": 1,
+                              "type": 110,
+                              "text": "IF",
+                              "cpos": 11
+                            },
+                            {
+                              "line": 1,
+                              "type": 316,
+                              "text": "EXISTS",
+                              "cpos": 14
+                            }
+                          ]
+                        },
+                        {
+                          "names_references": [
+                            {
+                              "schema_qualified_name": [
+                                {
+                                  "identifier": [
+                                    {
+                                      "id_token": [
+                                        {
+                                          "line": 1,
+                                          "type": 627,
+                                          "text": "dna_rnf",
+                                          "cpos": 21
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 1,
+                                  "type": 609,
+                                  "text": ".",
+                                  "cpos": 28
+                                },
+                                {
+                                  "identifier": [
+                                    {
+                                      "id_token": [
+                                        {
+                                          "line": 1,
+                                          "type": 627,
+                                          "text": "rnf_account",
+                                          "cpos": 29
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": 1,
+      "type": 594,
+      "text": ";",
+      "cpos": 40
+    },
+    {
+      "statement": [
+        {
+          "schema_statement": [
+            {
+              "schema_create": [
+                {
+                  "line": 3,
+                  "type": 396,
+                  "text": "CREATE",
+                  "cpos": 0
+                },
+                {
+                  "create_table_as_statement": [
+                    {
+                      "line": 3,
+                      "type": 443,
+                      "text": "TABLE",
+                      "cpos": 7
+                    },
+                    {
+                      "schema_qualified_name": [
+                        {
+                          "identifier": [
+                            {
+                              "id_token": [
+                                {
+                                  "line": 3,
+                                  "type": 627,
+                                  "text": "dna_rnf",
+                                  "cpos": 13
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "line": 3,
+                          "type": 609,
+                          "text": ".",
+                          "cpos": 20
+                        },
+                        {
+                          "identifier": [
+                            {
+                              "id_token": [
+                                {
+                                  "line": 3,
+                                  "type": 627,
+                                  "text": "rnf_account",
+                                  "cpos": 21
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "line": 3,
+                      "type": 386,
+                      "text": "AS",
+                      "cpos": 33
+                    },
+                    {
+                      "select_stmt": [
+                        {
+                          "select_ops": [
+                            {
+                              "select_primary": [
+                                {
+                                  "line": 4,
+                                  "type": 439,
+                                  "text": "SELECT",
+                                  "cpos": 0
+                                },
+                                {
+                                  "set_qualifier": [
+                                    {
+                                      "line": 4,
+                                      "type": 406,
+                                      "text": "DISTINCT",
+                                      "cpos": 7
+                                    }
+                                  ]
+                                },
+                                {
+                                  "select_list": [
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 4,
+                                                                  "type": 627,
+                                                                  "text": "id",
+                                                                  "cpos": 16
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 4,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 18
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 4,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 20
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 4,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 25
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 4,
+                                                  "type": 627,
+                                                  "text": "account_id",
+                                                  "cpos": 28
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 4,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 38
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 5,
+                                                                  "type": 627,
+                                                                  "text": "created_date",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 5,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 16
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "line": 5,
+                                                      "type": 342,
+                                                      "text": "TIMESTAMP",
+                                                      "cpos": 18
+                                                    },
+                                                    {
+                                                      "line": 5,
+                                                      "type": 299,
+                                                      "text": "WITHOUT",
+                                                      "cpos": 28
+                                                    },
+                                                    {
+                                                      "line": 5,
+                                                      "type": 341,
+                                                      "text": "TIME",
+                                                      "cpos": 36
+                                                    },
+                                                    {
+                                                      "line": 5,
+                                                      "type": 306,
+                                                      "text": "ZONE",
+                                                      "cpos": 41
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 5,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 46
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 5,
+                                                  "type": 627,
+                                                  "text": "account_created_date",
+                                                  "cpos": 49
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 5,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 69
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 6,
+                                                                  "type": 627,
+                                                                  "text": "owner_theater_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 6,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 19
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 6,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 21
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 6,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 26
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 6,
+                                                  "type": 627,
+                                                  "text": "dna_custom_ac_owner_theater",
+                                                  "cpos": 29
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 6,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 56
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 7,
+                                                                  "type": 627,
+                                                                  "text": "annual_revenue",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 7,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 18
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "line": 7,
+                                                      "type": 75,
+                                                      "text": "DOUBLE",
+                                                      "cpos": 20
+                                                    },
+                                                    {
+                                                      "line": 7,
+                                                      "type": 335,
+                                                      "text": "PRECISION",
+                                                      "cpos": 27
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 7,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 37
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 7,
+                                                  "type": 627,
+                                                  "text": "dna_std_ac_annual_revenue",
+                                                  "cpos": 40
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 7,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 65
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 8,
+                                                                  "type": 627,
+                                                                  "text": "number_of_employees",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 8,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 23
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "line": 8,
+                                                      "type": 308,
+                                                      "text": "BIGINT",
+                                                      "cpos": 25
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 8,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 32
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 8,
+                                                  "type": 627,
+                                                  "text": "dna_std_ac_number_of_employees",
+                                                  "cpos": 35
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 8,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 65
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 9,
+                                                                  "type": 627,
+                                                                  "text": "industry",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 9,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 12
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 9,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 14
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 9,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 19
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 9,
+                                                  "type": 627,
+                                                  "text": "dna_std_ac_industry",
+                                                  "cpos": 22
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 9,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 41
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 10,
+                                                                  "type": 627,
+                                                                  "text": "industry_category",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 10,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 21
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 10,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 23
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 10,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 28
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 10,
+                                                  "type": 627,
+                                                  "text": "dna_std_ac_industry_groups",
+                                                  "cpos": 31
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 10,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 57
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 11,
+                                                                  "type": 627,
+                                                                  "text": "rubrik_tam_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 11,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 16
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "line": 11,
+                                                      "type": 75,
+                                                      "text": "DOUBLE",
+                                                      "cpos": 18
+                                                    },
+                                                    {
+                                                      "line": 11,
+                                                      "type": 335,
+                                                      "text": "PRECISION",
+                                                      "cpos": 25
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 11,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 35
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 11,
+                                                  "type": 627,
+                                                  "text": "rubrik_tam_c",
+                                                  "cpos": 38
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 11,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 50
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 12,
+                                                                  "type": 627,
+                                                                  "text": "products_installed_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 12,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 24
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 12,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 26
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 12,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 31
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 12,
+                                                  "type": 627,
+                                                  "text": "products_installed_c",
+                                                  "cpos": 34
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 12,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 54
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 13,
+                                                                  "type": 627,
+                                                                  "text": "account_tier_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 13,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 18
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 13,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 20
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 13,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 25
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 13,
+                                                  "type": 627,
+                                                  "text": "account_tier_c",
+                                                  "cpos": 28
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 13,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 42
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 14,
+                                                                  "type": 627,
+                                                                  "text": "microsoft_account_flag_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 14,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 28
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 14,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 30
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 14,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 35
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 14,
+                                                  "type": 627,
+                                                  "text": "microsoft_account_flag_c",
+                                                  "cpos": 38
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 14,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 62
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 15,
+                                                                  "type": 627,
+                                                                  "text": "net_app_account_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 15,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 21
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 15,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 23
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 15,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 28
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 15,
+                                                  "type": 627,
+                                                  "text": "net_app_account_c",
+                                                  "cpos": 31
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 15,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 48
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 16,
+                                                                  "type": 627,
+                                                                  "text": "gsi_partner_flag_c",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 16,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 22
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "schema_qualified_name_nontype": [
+                                                        {
+                                                          "identifier_nontype": [
+                                                            {
+                                                              "tokens_nonreserved": [
+                                                                {
+                                                                  "line": 16,
+                                                                  "type": 269,
+                                                                  "text": "TEXT",
+                                                                  "cpos": 24
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 16,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 29
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 16,
+                                                  "type": 627,
+                                                  "text": "partner_flag_c",
+                                                  "cpos": 32
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 16,
+                                      "type": 595,
+                                      "text": ",",
+                                      "cpos": 46
+                                    },
+                                    {
+                                      "select_sublist": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "vex": [
+                                                {
+                                                  "value_expression_primary": [
+                                                    {
+                                                      "indirection_var": [
+                                                        {
+                                                          "identifier": [
+                                                            {
+                                                              "id_token": [
+                                                                {
+                                                                  "line": 17,
+                                                                  "type": 627,
+                                                                  "text": "is_partner",
+                                                                  "cpos": 4
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 17,
+                                              "type": 591,
+                                              "text": "::",
+                                              "cpos": 14
+                                            },
+                                            {
+                                              "data_type": [
+                                                {
+                                                  "predefined_type": [
+                                                    {
+                                                      "line": 17,
+                                                      "type": 310,
+                                                      "text": "BOOLEAN",
+                                                      "cpos": 16
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 17,
+                                          "type": 386,
+                                          "text": "AS",
+                                          "cpos": 24
+                                        },
+                                        {
+                                          "col_label": [
+                                            {
+                                              "id_token": [
+                                                {
+                                                  "line": 17,
+                                                  "type": 627,
+                                                  "text": "is_partner",
+                                                  "cpos": 27
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 18,
+                                  "type": 415,
+                                  "text": "FROM",
+                                  "cpos": 0
+                                },
+                                {
+                                  "from_item": [
+                                    {
+                                      "from_item": [
+                                        {
+                                          "from_primary": [
+                                            {
+                                              "schema_qualified_name": [
+                                                {
+                                                  "identifier": [
+                                                    {
+                                                      "id_token": [
+                                                        {
+                                                          "line": 18,
+                                                          "type": 627,
+                                                          "text": "dna_etl",
+                                                          "cpos": 5
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "line": 18,
+                                                  "type": 609,
+                                                  "text": ".",
+                                                  "cpos": 12
+                                                },
+                                                {
+                                                  "identifier": [
+                                                    {
+                                                      "id_token": [
+                                                        {
+                                                          "line": 18,
+                                                          "type": 627,
+                                                          "text": "sfdc_account",
+                                                          "cpos": 13
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 19,
+                                      "type": 371,
+                                      "text": "LEFT",
+                                      "cpos": 0
+                                    },
+                                    {
+                                      "line": 19,
+                                      "type": 370,
+                                      "text": "JOIN",
+                                      "cpos": 5
+                                    },
+                                    {
+                                      "from_item": [
+                                        {
+                                          "from_primary": [
+                                            {
+                                              "schema_qualified_name": [
+                                                {
+                                                  "identifier": [
+                                                    {
+                                                      "id_token": [
+                                                        {
+                                                          "line": 19,
+                                                          "type": 627,
+                                                          "text": "dna_rnf",
+                                                          "cpos": 10
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "line": 19,
+                                                  "type": 609,
+                                                  "text": ".",
+                                                  "cpos": 17
+                                                },
+                                                {
+                                                  "identifier": [
+                                                    {
+                                                      "id_token": [
+                                                        {
+                                                          "line": 19,
+                                                          "type": 627,
+                                                          "text": "account_industry_map",
+                                                          "cpos": 18
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 19,
+                                      "type": 431,
+                                      "text": "ON",
+                                      "cpos": 39
+                                    },
+                                    {
+                                      "vex": [
+                                        {
+                                          "vex": [
+                                            {
+                                              "value_expression_primary": [
+                                                {
+                                                  "indirection_var": [
+                                                    {
+                                                      "identifier": [
+                                                        {
+                                                          "id_token": [
+                                                            {
+                                                              "line": 19,
+                                                              "type": 627,
+                                                              "text": "industry",
+                                                              "cpos": 42
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "line": 19,
+                                          "type": 592,
+                                          "text": "=",
+                                          "cpos": 51
+                                        },
+                                        {
+                                          "vex": [
+                                            {
+                                              "value_expression_primary": [
+                                                {
+                                                  "comparison_mod": [
+                                                    {
+                                                      "line": 19,
+                                                      "type": 384,
+                                                      "text": "ANY",
+                                                      "cpos": 53
+                                                    },
+                                                    {
+                                                      "line": 19,
+                                                      "type": 601,
+                                                      "text": "(",
+                                                      "cpos": 56
+                                                    },
+                                                    {
+                                                      "vex": [
+                                                        {
+                                                          "value_expression_primary": [
+                                                            {
+                                                              "indirection_var": [
+                                                                {
+                                                                  "identifier": [
+                                                                    {
+                                                                      "id_token": [
+                                                                        {
+                                                                          "line": 19,
+                                                                          "type": 627,
+                                                                          "text": "industry_fine",
+                                                                          "cpos": 57
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "line": 19,
+                                                      "type": 602,
+                                                      "text": ")",
+                                                      "cpos": 70
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": 19,
+      "type": -1,
+      "text": "<EOF>",
+      "cpos": 71
+    },
+    {
+      "line": 19,
+      "type": -1,
+      "text": "<EOF>",
+      "cpos": 71
+    }
+  ],
+  "file": "rnf_account.sql",
+  "query": "DROP TABLE IF EXISTS DNA_RNF.RNF_ACCOUNT;\n\nCREATE TABLE DNA_RNF.RNF_ACCOUNT AS\nSELECT DISTINCT ID::TEXT AS ACCOUNT_ID,\n    CREATED_DATE::TIMESTAMP WITHOUT TIME ZONE AS ACCOUNT_CREATED_DATE,\n    OWNER_THEATER_C::TEXT AS DNA_CUSTOM_AC_OWNER_THEATER,\n    ANNUAL_REVENUE::DOUBLE PRECISION AS DNA_STD_AC_ANNUAL_REVENUE,\n    NUMBER_OF_EMPLOYEES::BIGINT AS DNA_STD_AC_NUMBER_OF_EMPLOYEES,\n    INDUSTRY::TEXT AS DNA_STD_AC_INDUSTRY,\n    INDUSTRY_CATEGORY::TEXT AS DNA_STD_AC_INDUSTRY_GROUPS,\n    RUBRIK_TAM_C::DOUBLE PRECISION AS RUBRIK_TAM_C,\n    PRODUCTS_INSTALLED_C::TEXT AS PRODUCTS_INSTALLED_C,\n    ACCOUNT_TIER_C::TEXT AS ACCOUNT_TIER_C,\n    MICROSOFT_ACCOUNT_FLAG_C::TEXT AS MICROSOFT_ACCOUNT_FLAG_C,\n    NET_APP_ACCOUNT_C::TEXT AS NET_APP_ACCOUNT_C,\n    GSI_PARTNER_FLAG_C::TEXT AS PARTNER_FLAG_C,\n    IS_PARTNER::BOOLEAN AS IS_PARTNER\nFROM dna_etl.sfdc_account\nLEFT JOIN dna_rnf.ACCOUNT_INDUSTRY_MAP ON INDUSTRY = ANY(INDUSTRY_FINE)"
+}
