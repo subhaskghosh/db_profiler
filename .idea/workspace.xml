@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9278a2ef-27b7-4c43-be7a-b0f9629c41d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/db_profiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/db_profiler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pandas_profiling/config_default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/config_default.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postgreSQLParser/postgreSQLParser.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
