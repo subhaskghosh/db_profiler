@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9278a2ef-27b7-4c43-be7a-b0f9629c41d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/postgreSQLParser/src/main/antlr4/SQLLexer.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postgreSQLParser/src/main/antlr4/SQLParser.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/db_profiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/db_profiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/bank-full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/data/bank-full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/bank_cleaned.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/data/bank_cleaned.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/banking_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/python_examples/banking_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/chicago_employees.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/python_examples/chicago_employees.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/titanic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/data/titanic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/titanic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/python_examples/titanic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pandas_profiling/config_default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/config_default.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pandas_profiling/model/describe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postgreSQLParser/postgreSQLParser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/profiler_ui/views/profile.pug" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -121,6 +117,7 @@
     <option name="width" value="1680" />
     <option name="height" value="947" />
   </component>
+  <component name="ProjectId" id="20iCPJE4rA4Swy63XYgm45kxznk" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -166,9 +163,15 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -183,19 +186,7 @@
       <recent name="$PROJECT_DIR$/src/examples/data" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.parseTree">
+  <component name="RunManager" selected="Python.console_dvd">
     <configuration name="console" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="db_profiler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -251,7 +242,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/pandas_profiling/controller/console.py" />
-      <option name="PARAMETERS" value="postgresql+psycopg2://postgres:m0nd0d0r1@localhost:5432/test public Track mongodb://localhost:27017/ --config_file $PROJECT_DIR$/src/pandas_profiling/config_default.yaml --infer_dtypes" />
+      <option name="PARAMETERS" value="postgresql+psycopg2://dna_etl_user1:dna.dna%25321@localhost:15432/mxdotcom dna_etl sfdc_task mongodb://localhost:27017/ --config_file $PROJECT_DIR$/src/pandas_profiling/config_default.yaml --infer_dtypes" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -337,6 +328,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

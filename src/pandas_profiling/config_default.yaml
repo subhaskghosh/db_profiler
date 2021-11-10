@@ -37,7 +37,7 @@ vars:
         skewness_threshold: 20
         low_categorical_threshold: 5
         # Set to zero to disable
-        chi_squared_threshold: 0.999
+        chi_squared_threshold: 0
     cat:
         length: true
         characters: true
@@ -108,7 +108,7 @@ correlations:
 # Bivariate / Pairwise relations
 interactions:
   targets: []
-  continuous: true
+  continuous: false
 
 # For categorical
 categorical_maximum_correlation_distinct: 100

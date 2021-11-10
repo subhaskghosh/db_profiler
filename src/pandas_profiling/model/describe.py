@@ -297,7 +297,10 @@ def describe(
         sample = {}
         sample["analysis"] = analysis
         sample["sample"] = samples
-        duplicates["analysis"] = analysis
+
+        duplicates_result = {}
+        duplicates_result['duplicates'] = duplicates
+        duplicates_result["analysis"] = analysis
 
         columns = {}
         columns['variables'] = []
@@ -319,7 +322,7 @@ def describe(
         series_description = encode_it(format_summary(series_description))
         scatter_matrix = encode_it(format_summary(scatter_matrix))
         sample = encode_it(format_summary(sample))
-        duplicates = encode_it(format_summary(duplicates))
+        duplicates_result = encode_it(format_summary(duplicates_result))
         columns = encode_it(format_summary(columns))
 
         for k, v in series_description.items():
@@ -366,7 +369,7 @@ def describe(
         alerts_collection.insert_one(alrt)
         table_stats_collection.insert_one(table_stats)
         samples_collection.insert_one(sample)
-        duplicates_collection.insert_one(duplicates)
+        duplicates_collection.insert_one(duplicates_result)
         variables_collection.insert_one(columns)
 
         for k, v in correlations_diagram.items():
